@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="lenis" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stergios Pappos - Creative Designer</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <!-- <link rel="stylesheet" href="./test/styles.css" /> -->
+    <link rel="stylesheet" href="./css/styleguide.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <a href="/" id="logo-link">
+                <div class="logo">
+                  <div class="s-letter">S</div>
+                  <svg
+                    class="line"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="93"
+                    height="5"
+                    viewBox="0 0 93 5"
+                    fill="none"
+                  >
+                    <path
+                      id="Vector"
+                      d="M0.540039 0.369873H92.57V4.58987H0.540039V0.369873Z"
+                      fill="white"
+                    ></path>
+                  </svg>
+
+                  <div class="p-letter">P</div>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="/projects" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a href="/contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="main">
+        <section class="hero">
+          <div class="container-3">
+            <h1 class="tagline">
+              Stergios is a versatile designer focused on user-centered,
+              impactful digital experiences.
+            </h1>
+          </div>
+          <div class="bellow-thefold container-3">
+            <p class="tagline">
+              Crafting user-centered digital experiences and brand identities
+              that connect with audiences, combining design and strategy to
+              drive meaningful growth.
+            </p>
+          </div>
+          <div class="overlay"></div>
+          <img src="./assets/bg-1.avif" class="hero-bg" alt="" />
+        </section>
+        <section class="about container-3">
+          <h2 class="overview">Overview</h2>
+          <div class="overview-container">
+            <div class="overview">
+              <p>
+                Specializing in client-facing interactions, I excel in crafting
+                solutions that prioritize functionality, and user experience,
+                with a proven track record in boosting sales and income for my
+                clients.
+              </p>
+              <p>
+                With a keen eye for detail and a relentless pursuit of
+                excellence, I aim to deliver projects that exceed expectations.
+              </p>
+            </div>
+            <a class="btn"
+              >About me
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1,5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-arrow-right"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </section>
+
+        <section class="selected-projects container-3">
+          <div class="projects-intro-contaier">
+            <h2 class="selected-projects-title">Selected Projects</h2>
+            <div class="text-container">
+              <p class="selected-projects-desc">
+                Elevating brands in the digital world. Together we redefine
+                excellence, always straightforward and leading-edge.
+              </p>
+              <p class="selected-projects-desc">
+                Here's what clients say about the transformative power of a
+                tailored visual strategy.
+              </p>
+            </div>
+          </div>
+          <h3 class="latest-title">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1,5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-arrow-down-left"
+            >
+              <path d="M17 7 7 17" />
+              <path d="M17 17H7V7" />
+            </svg>
+            THE LATEST PROJECTS
+          </h3>
+        </section>
+        <!-- SLIDER -->
+        <section>
+          <div class="slider">
+            <div class="slider-images">
+              <div class="img">
+                <img src="./assets/project-images/img1.jpg" alt="" />
+              </div>
+            </div>
+
+            <div class="slider-title">
+              <div class="slider-title-wrapper">
+                <p>The Revival Ensemble</p>
+                <p>Above The Canvas</p>
+                <p>Harmony in Every Note</p>
+                <p>Redefining Imagination</p>
+                <p>From Earth to Expression</p>
+              </div>
+            </div>
+
+            <div class="slider-counter">
+              <div class="counter">
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+                <p>5</p>
+              </div>
+              <div><p>&mdash;</p></div>
+              <div><p>5</p></div>
+            </div>
+
+            <div class="slider-preview">
+              <div class="preview active">
+                <img src="./assets/project-images/img1.jpg" alt="" />
+              </div>
+              <div class="preview">
+                <img src="./assets/project-images/img2.jpg" alt="" />
+              </div>
+              <div class="preview">
+                <img src="./assets/project-images/img3.jpg" alt="" />
+              </div>
+              <div class="preview">
+                <img src="./assets/project-images/img4.jpg" alt="" />
+              </div>
+              <div class="preview">
+                <img src="./assets/project-images/img5.jpg" alt="" />
+              </div>
+            </div>
+
+            <div class="slider-indicators">
+              <p>+</p>
+              <p>+</p>
+            </div>
+          </div>
+          <!-- END SLIDER -->
+        </section>
+      </main>
+      <footer class="container-3">
+        <div class="footer-top">
+          <div class="full-logo">
+            <a href="/" id="logo-link">
+              <div class="logo">
+                <div class="s-letter">Stergios</div>
+                <svg
+                  class="line"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="180"
+                  height="5"
+                  viewBox="0 0 93 5"
+                  fill="none"
+                >
+                  <path
+                    id="Vector"
+                    d="M0.540039 0.369873H92.57V4.58987H0.540039V0.369873Z"
+                    fill="white"
+                  ></path>
+                </svg>
+
+                <div class="p-letter">Pappos</div>
+              </div>
+            </a>
+          </div>
+          <div class="second-menu">
+            <div class="home-link">Home</div>
+            <div class="divider">/</div>
+            <div class="home-link">About</div>
+            <div class="divider">/</div>
+            <div class="home-link">Projects</div>
+            <div class="divider">/</div>
+            <div class="home-link">Contact</div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom-top">
+            <div class="location">
+              <div class="location-title">Location</div>
+              <div class="location-desc">Dubai, UAE</div>
+              <div class="time">2:25PM (GST)</div>
+            </div>
+            <div class="contact">
+              <div class="contact-title">Get In Touch</div>
+              <div class="contact-desc">
+                contact@stergiospappos.me<br />
+                +971 58 546 1102
+              </div>
+            </div>
+            <div class="social">
+              <div class="social-title">Social</div>
+              <div class="social-desc">
+                <a href="https://www.linkedin.com/in/spappos/">LinkedIn</a>
+                <a href="https://www.instagram.com/s_pappos/">Instagram</a>
+                <a href="https://github.com/stergiospappos">Github</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom-bottom">
+            <div class="copyright">All Rights Reserved ©2025</div>
+            <div class="powered">
+              Please note that my portfolio is a work in progress and it does
+              not include all my latest projects at this time.
+            </div>
+            <div class="backtotop"><a href="#top">Back To Top</a>></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./js/script.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="./js/lenis.js"></script>
+  </body>
+</html>
