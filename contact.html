@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="lenis lenis-stopped" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stergios Pappos - Creative Designer</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/styleguide.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+  </head>
+  <body class="contact-page-selected" lenis-data-prevent="true">
+    <div id="app">
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <a href="/" id="logo-link">
+                <div class="logo">
+                  <div class="s-letter">S</div>
+                  <svg
+                    class="line"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="93"
+                    height="5"
+                    viewBox="0 0 93 5"
+                    fill="none"
+                  >
+                    <path
+                      id="Vector"
+                      d="M0.540039 0.369873H92.57V4.58987H0.540039V0.369873Z"
+                      fill="white"
+                    ></path>
+                  </svg>
+
+                  <div class="p-letter">P</div>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/about.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="/projects.html" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a href="/contact.html" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main class="main">
+        <section class="container-3 contact-page">
+          <div class="contact-text">
+            <h1>Contact Us</h1>
+            <p>
+              We love to collaborate with progressive brands and individuals all
+              across the world.
+            </p>
+            <p>Let's have a chat!</p>
+          </div>
+          <div class="contact-form-container">
+            <form
+              class="contact-form"
+              action="#"
+              method="post"
+              aria-label="Contact Form"
+            >
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                aria-required="true"
+                placeholder="Your Name"
+              />
+
+              <label for="email">E-Mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                aria-required="true"
+                placeholder="Your E-Mail"
+              />
+
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                aria-required="true"
+                placeholder="Your Message"
+              ></textarea>
+
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </section>
+      </main>
+      <footer class="container-3">
+        <div class="footer-bottom">
+          <div class="footer-bottom-top">
+            <div class="location">
+              <div class="location-title">Location</div>
+              <div class="location-desc">Dubai, UAE</div>
+              <div class="time">2:25PM (GST)</div>
+            </div>
+            <div class="contact">
+              <div class="contact-title">Get In Touch</div>
+              <div class="contact-desc">
+                contact@stergiospappos.me<br />
+                +971 58 546 1102
+              </div>
+            </div>
+            <div class="social">
+              <div class="social-title">Social</div>
+              <div class="social-desc">
+                <a href="https://www.linkedin.com/in/spappos/">LinkedIn</a>
+                <a href="https://www.instagram.com/s_pappos/">Instagram</a>
+                <a href="https://github.com/stergiospappos">Github</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./js/script.js"></script>
+
+    <script
+      src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"
+      defer
+    ></script>
+    <script src="./js/lenis.js" defer></script>
+  </body>
+</html>

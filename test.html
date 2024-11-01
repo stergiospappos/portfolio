@@ -4,6 +4,177 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/styleguide.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
   </head>
-  <body></body>
+  <body>
+    <style>
+      /* General Styles */
+      .hidden {
+        display: none;
+      }
+
+      .fade-out {
+        opacity: 0;
+        transition: opacity 2s cubic-bezier(0.75, 0, 0.25, 1);
+      }
+
+      .loading-anim-logo-container,
+      .loading-anim-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        transform: translateY(0); /* Initial position */
+        transition: transform 0.6s cubic-bezier(0.75, 0, 0.25, 1),
+          opacity 0.6s cubic-bezier(0.75, 0, 0.25, 1);
+      }
+
+      .loading-anim-bg {
+        background-color: black;
+      }
+
+      .loading-anim-bg.clip-up {
+        transform: translateY(
+          -100vh
+        ); /* Move the container fully out of the viewport */
+      }
+
+      /* Logo Container Styles */
+      .loading-anim-logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+      }
+
+      .loading-anim-logo-container .logo {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        color: var(--color-light);
+        font-weight: 300;
+        font-size: 1.1em;
+        mix-blend-mode: difference;
+        position: relative;
+        width: min-content;
+        text-decoration: none;
+        z-index: 2;
+      }
+
+      /* Text Animation */
+      .loading-anim-logo-container .s-letter,
+      .loading-anim-logo-container .p-letter {
+        overflow: hidden;
+        display: inline-block;
+        line-height: 1.2;
+      }
+
+      .loading-anim-logo-container .s-letter span,
+      .loading-anim-logo-container .p-letter span {
+        display: inline-block;
+        transform: translateY(100%);
+        transition: transform 0.6s cubic-bezier(0.75, 0, 0.25, 1);
+      }
+
+      .s-letter.reveal span,
+      .p-letter.reveal span {
+        transform: translateY(0);
+      }
+
+      /* Line Animation */
+      .loading-line {
+        width: 0;
+        height: 0.5px;
+        transition: width 1.5s cubic-bezier(0.75, 0, 0.25, 1);
+        display: block;
+        background-color: var(--color-light);
+        transform-origin: 50% 50%;
+      }
+
+      .loading-line.expand {
+        width: calc(100vw - 250px);
+      }
+    </style>
+    <div class="loading-anim-logo-container">
+      <div class="logo">
+        <div class="s-letter">STERGIOS</div>
+        <svg
+          class="loading-line"
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="5"
+          viewBox="0 0 93 5"
+          fill="none"
+        >
+          <path
+            id="Vector"
+            d="M0.540039 0.369873H92.57V4.58987H0.540039V0.369873Z"
+            fill="white"
+          ></path>
+        </svg>
+
+        <div class="p-letter">PAPPOS</div>
+      </div>
+      <div class="loading-anim-bg"></div>
+    </div>
+
+    <section>
+      <h1>Hello</h1>
+      <button>Welcome</button>
+    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sLetter = document.querySelector(".s-letter");
+        const pLetter = document.querySelector(".p-letter");
+        const line = document.querySelector(".loading-line");
+        const logo = document.querySelector(".logo");
+        const logoContainer = document.querySelector(
+          ".loading-anim-logo-container"
+        );
+        const loadingbg = document.querySelector(".loading-anim-bg");
+
+        // Wrap each word in a span for animation
+        sLetter.innerHTML = `<span>${sLetter.textContent}</span>`;
+        pLetter.innerHTML = `<span>${pLetter.textContent}</span>`;
+
+        // Step 1: Text Reveal Animation
+        setTimeout(() => {
+          sLetter.classList.add("reveal");
+        }, 100);
+        setTimeout(() => {
+          pLetter.classList.add("reveal");
+        }, 400);
+
+        // Step 2: Line Expansion Animation
+        setTimeout(() => {
+          line.classList.add("expand");
+        }, 1300);
+
+        // Step 3: Optional Fade Out before moving up
+        setTimeout(() => {
+          logo.classList.add("fade-out");
+        }, 2500);
+
+        // Step 4: Clip Up
+        setTimeout(() => {
+          loadingbg.classList.add("clip-up");
+        }, 3000);
+
+        // Step 5: Set display to none
+        setTimeout(() => {
+          logoContainer.classList.add("hidden");
+        }, 4000);
+      });
+    </script>
+  </body>
 </html>
