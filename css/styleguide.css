@@ -866,6 +866,14 @@ footer {
 .contact-form button:hover {
   background-color: #333;
 }
+.projects-hero {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
 
 /* ------------------------- SLIDER PROJECTS -------------------------------------------------- */
 
@@ -1129,5 +1137,28 @@ img {
     min-height: 80vh;
     padding-top: 100px;
     padding-bottom: 100px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-bottom-bottom {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 730px) {
+  .footer-bottom-top {
+    flex-direction: column;
+  }
+  .location,
+  .contact,
+  .social,
+  .copyright,
+  .powered,
+  .backtotop {
+    width: 100%;
+  }
+  .footer-top {
+    flex-direction: column;
+    gap: 50px;
   }
 }
