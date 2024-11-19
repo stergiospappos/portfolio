@@ -1,0 +1,96 @@
+/* Base Styles */
+.projects {
+  width: 100%;
+  padding: 10em 0;
+}
+
+.projects .row {
+  width: 100%;
+  padding: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.projects .row:nth-child(even) {
+  justify-content: flex-end;
+}
+
+.project-item {
+  position: relative;
+  width: 35%;
+  margin: 1em;
+  transition: transform 300ms ease;
+  flex-shrink: 0;
+}
+
+.project-item:hover {
+  transform: scale(1.05);
+  transition-duration: 150ms;
+}
+
+.project-img {
+  width: 100%;
+  aspect-ratio: 16/9; /* Ensures consistent image aspect ratio */
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+
+.project-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75em 0.5em;
+}
+
+.project-details p#project-name {
+  font-weight: 500;
+}
+
+.project-details p {
+  font-size: 16px;
+}
+
+/* Tablet Styles */
+@media (max-width: 900px) {
+  .projects {
+    padding: 10em 0;
+  }
+
+  .projects .row {
+    margin: 3em 0;
+    justify-content: center;
+  }
+
+  .project-item {
+    width: 45%;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 700px) {
+  .projects {
+    padding: 5em 0;
+  }
+
+  .project-item {
+    width: 100%;
+    margin: 2em 0;
+  }
+
+  .projects .row {
+    justify-content: center;
+  }
+}
+
+/* Ensure consistent height for project images */
+.project-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Flexbox enhancements */
+.projects .row {
+  gap: 2em;
+} /* Adding gap between project items for better spacing */

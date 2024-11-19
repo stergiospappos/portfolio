@@ -1,0 +1,27 @@
+/* Cursor Styling */
+.cursor {
+  z-index: 1000;
+  background-color: var(--color-accent); /* Dark background */
+  color: #000 !important;
+  border-radius: 0.25em;
+  padding: 0.3em 0.75em 0.4em; /* Padding inside the cursor */
+  font-size: 1.15em;
+  line-height: 1.5; /* Line height for text */
+  position: fixed; /* Position relative to the viewport */
+  pointer-events: none; /* Prevent cursor from blocking clicks */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.2s ease-in-out; /* Smooth fade-in/out transition */
+  transform: translate(-50%, -50%); /* Center the cursor around the mouse */
+}
+
+/* Visible State for Cursor */
+.cursor.visible {
+  opacity: 1; /* Show cursor */
+}
+
+/* Cursor Text Styling */
+.cursor p {
+  margin: 0; /* Remove default margin */
+  white-space: nowrap; /* Prevent text wrapping */
+  color: #000 !important;
+}
