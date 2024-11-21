@@ -102,7 +102,7 @@ const SampleProject = () => {
               <div
                 className="overlay-device-image"
                 style={{
-                  background: `url('.') center center no-repeat`,
+                  background: `url(&apos;.&apos;) center center no-repeat`,
                   backgroundSize: "cover",
                 }}
               ></div>
@@ -117,13 +117,13 @@ const SampleProject = () => {
               <p>
                 The primary challenge was to translate the calm and restorative
                 experience of a massage therapy session into a digital format.
-                The center's previous online presence lacked the warmth and
+                The center&apos;s previous online presence lacked the warmth and
                 inviting atmosphere crucial for attracting and retaining
                 clientele seeking relaxation and healing. Additionally,
                 navigating the site was cumbersome, significantly impacting
                 client bookings and overall user satisfaction.
               </p>
-              <h2>How It's Solved</h2>
+              <h2>How It&apos;s Solved</h2>
               <p>
                 I approached this challenge by focusing on creating a visually
                 calming digital environment. Utilizing a soft, soothing colour
@@ -139,14 +139,14 @@ const SampleProject = () => {
               <p>
                 The redesigned website for Physis Massage Therapy Center has
                 significantly elevated the user experience, mirroring the
-                center's commitment to providing a sanctuary of healing and
+                center&apos;s commitment to providing a sanctuary of healing and
                 relaxation. The intuitive design and streamlined booking process
                 have resulted in a noticeable increase in appointment bookings,
                 with client feedback praising the ease of navigation and the
                 tranquil aesthetic. This digital transformation has not only
-                strengthened the center's brand identity but has also expanded
-                its reach, attracting a broader audience seeking therapeutic
-                services.
+                strengthened the center&apos;s brand identity but has also
+                expanded its reach, attracting a broader audience seeking
+                therapeutic services.
               </p>
             </div>
           </div>

@@ -10,7 +10,6 @@ import {
   services,
   devtools,
   designtools,
-  journey,
   industries,
   courses,
   bootcamps,
@@ -50,12 +49,12 @@ const Information = () => {
             </div>
             <div className="col">
               <p>
-                When I take on a project, it's a commitment to transform more
-                than just your website. It's about enhancing every touchpoint of
-                your digital ecosystem.
+                When I take on a project, it&apos;s a commitment to transform
+                more than just your website. It&apos;s about enhancing every
+                touchpoint of your digital ecosystem.
               </p>
               <div className="contact-link">
-                <Link to="/">&#x2192; Let's Connect</Link>
+                <Link to="/">&#x2192; Let&apos;s Connect</Link>
               </div>
             </div>
           </div>
