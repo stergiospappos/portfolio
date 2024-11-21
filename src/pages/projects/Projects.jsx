@@ -6,6 +6,7 @@ import "./Projects.css";
 import PixelatedImageCard from "../../components/PixelatedImageCard/PixelatedImageCard";
 
 import Transition from "../../components/preview/transition/Transition";
+import DynamicCursor from "../../components/DynamicCursor/DynamicCursor";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -18,6 +19,9 @@ import ProjectImg4 from "../../assets/projects/project4.jpg";
 import ProjectImg5 from "../../assets/projects/project5.jpg";
 import ProjectImg6 from "../../assets/projects/project6.jpg";
 
+import PhysisImg1 from "../../assets/projects/physis-massage/projects-physis-img1.avif";
+import PhysisImg2 from "../../assets/projects/physis-massage/projects-physis-img2.avif";
+
 const Projects = () => {
   const [projectList, setProjectList] = useState([]);
   const containerRef = useRef(null);
@@ -25,40 +29,46 @@ const Projects = () => {
 
   const projects = [
     {
-      name: "Revive",
-      category: "Brand Identity",
-      img: ProjectImg1,
-      activeImg: ProjectImg2,
+      name: "Physis Massage",
+      category: "Web Design & Development",
+      img: PhysisImg1,
+      activeImg: PhysisImg2,
+      slug: "physis-massage",
     },
     {
       name: "Echoes of Light",
       category: "Digital Illustration",
       img: ProjectImg2,
       activeImg: ProjectImg3,
+      slug: "sample-project",
     },
     {
       name: "Urban Symphony",
       category: "Environmental Design",
       img: ProjectImg3,
       activeImg: ProjectImg4,
+      slug: "sample-project",
     },
     {
       name: "Fragmented Reality",
       category: "3D Animation",
       img: ProjectImg4,
       activeImg: ProjectImg5,
+      slug: "sample-project",
     },
     {
       name: "Luminous Flux",
       category: "Motion Graphics",
       img: ProjectImg5,
       activeImg: ProjectImg6,
+      slug: "sample-project",
     },
     {
       name: "Reflections",
       category: "Interactive Media",
       img: ProjectImg6,
       activeImg: ProjectImg2,
+      slug: "sample-project",
     },
   ];
 
@@ -69,7 +79,7 @@ const Projects = () => {
         projects.map((project, j) => ({
           ...project,
           name: `${project.name}`,
-          id: i * projects.length + j,
+          url: `projects/${project.name.trim()}`,
         }))
       );
     setProjectList(initialSet);
@@ -113,6 +123,7 @@ const Projects = () => {
 
   return (
     <ReactLenis root>
+      <DynamicCursor />
       <div
         className="projects"
         ref={containerRef}
@@ -124,10 +135,10 @@ const Projects = () => {
       >
         <div className="container">
           {projectList.map((project) => (
-            <div className="row" key={project.id}>
+            <div className="row" key={Math.random(2)}>
               <div className="project-item">
                 <div className="project-img">
-                  <Link to={`/project/${project.id}`}>
+                  <Link to={`/projects/${project.slug}`}>
                     <PixelatedImageCard
                       defaultImg={project.img}
                       activeImg={project.activeImg}

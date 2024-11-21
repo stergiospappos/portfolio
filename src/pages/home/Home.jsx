@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 
 import Transition from "../../components/preview/transition/Transition";
+import DynamicCursor from "../../components/DynamicCursor/DynamicCursor";
+import EmailCopyHome from "../../components/EmailCopy/EmailCopyHome";
 
 const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
@@ -39,6 +41,7 @@ const Home = () => {
 
   return (
     <>
+      <DynamicCursor />
       <div className="hero-header">
         <div id="text">
           <div className="line">
@@ -57,16 +60,10 @@ const Home = () => {
           </div>
 
           <div className="line">
-            <Link
-              id="hero-link-01"
-              to="contact@stergiospappos.me"
-              target="_blank"
-              className="word fancy"
-            >
-              &#x2192;email
-            </Link>
+            <EmailCopyHome />
 
             <Link
+              data-cursor="Connect with me on LinkedIn"
               id="hero-link-02"
               to="https://www.linkedin.com/in/spappos/"
               target="_blank"

@@ -1,7 +1,40 @@
 :root {
-  --color-bg: #000;
+  --color-bg: #131312;
   --color-text: #fff;
   --color-accent: #d8ff00;
+  --color-neutral: #e3e1dd;
+  --color-red: #ff4b24;
+
+  --color-black: var(--color-neutral-900);
+  --color-neutral-200: #efeeec;
+  --color-light: var(--color-neutral-200);
+  --color-dark: var(--color-neutral-800);
+  --container-padding: 2em;
+  --color-neutral-900: black;
+  --color-neutral-300: #e3e1de;
+  --color-neutral-400: #cbc8c5;
+  --color-neutral-600: #2c2c2c;
+  --color-neutral-500: #818180;
+  --dash-side-width: 18.5em;
+  --color-neutral-800: #131313;
+  --dash-top-height: 6.5em;
+  --color-neutral-700: #1f1f1f;
+  --color-primary: #ff4c24;
+  --color-neutral-100: white;
+  --color-white: var(--color-neutral-100);
+  --color-error: var(--color-primary);
+  --color-success: #0ba954;
+  --gap-size: 1rem;
+}
+
+::selection {
+  color: var(--color-bg);
+  background-color: var(--color-accent);
+}
+
+::-moz-selection {
+  color: var(--color-bg);
+  background-color: var(--color-accent);
 }
 
 @font-face {
@@ -47,6 +80,20 @@ h1 {
   padding: 0;
   line-height: 100%;
   font-weight: 500;
+}
+
+h2 {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.55em;
+  line-height: 1.45;
+}
+
+h3 {
+  font-size: 1.75em;
+  font-style: normal;
+  font-size: 1.55em;
+  line-height: 1.45;
 }
 
 p,
@@ -104,6 +151,10 @@ li {
   height: 1px;
   background-color: #fff;
   margin: 0.5em 0;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 @media (max-width: 900px) {

@@ -4,20 +4,22 @@ import { ReactLenis } from "lenis/react";
 import "./Physismassage.css";
 
 import Transition from "../../components/preview/transition/Transition";
+import DynamicCursor from "../../components/DynamicCursor/DynamicCursor";
 
-import ProjectHeroImg from "../../assets/sample-projects/sample-project-hero-2.jpg";
-import ProjectHeroImg2 from "../../assets/sample-projects/sample-project-hero-3.jpg";
-import ProjectHeroImg3 from "../../assets/sample-projects/sample-project-hero.jpg";
-import ProjectImg1 from "../../assets/sample-projects/sample-project-1.jpg";
-import ProjectImg2 from "../../assets/sample-projects/sample-project-2.jpg";
-import ProjectImg3 from "../../assets/sample-projects/sample-project-3.jpg";
-import ProjectImg4 from "../../assets/sample-projects/sample-project-4.jpg";
+import ProjectHeroImg from "../../assets/projects/physis-massage/physis-project-hero.avif";
+import ProjectHeroImg2 from "../../assets/projects/physis-massage/physis_massage_img7.avif";
+import ProjectHeroImg3 from "../../assets/projects/physis-massage/physis_massage_img8.avif";
+import ProjectImg1 from "../../assets/projects/physis-massage/physis_massage_img3.avif";
+import ProjectImg2 from "../../assets/projects/physis-massage/physis_massage_img4.avif";
+import ProjectImg3 from "../../assets/projects/physis-massage/physis_massage_img5.avif";
+import ProjectImg4 from "../../assets/projects/physis-massage/physis_massage_img6.avif";
 
 const SampleProject = () => {
   return (
     <ReactLenis root>
+      <DynamicCursor />
       <div className="project">
-        <div className="conainer">
+        <div className="container">
           <div className="project-hero-img">
             <img src={ProjectHeroImg} alt="Project Hero Img" />
           </div>
@@ -28,12 +30,12 @@ const SampleProject = () => {
                 <p>Client &#x2192; Physis Massage Studio</p>
               </div>
               <div className="project-studio">
-                <p>Studio &#x2192; Creative Works</p>
+                <p>Role / Services &#x2192; Design & Development</p>
               </div>
             </div>
             <div className="col">
               <div className="project-year">
-                <p>Year &#x2192; 2023</p>
+                <p>Year &#x2192; 2024</p>
               </div>
             </div>
           </div>
@@ -41,30 +43,38 @@ const SampleProject = () => {
           <div className="project-copy">
             <div className="col">
               <h1>
-                Dynamic Vision: <br />
-                TechCorp x Innovate Media
+                Serene, Inviting <br />
+                Digital Space
               </h1>
             </div>
 
             <div className="col">
               <p>
-                A campaign designed to capture the innovation, creativity, and
-                energy that TechCorp brings to the forefront of technology.
-                Highlighting the cutting-edge developments for their latest
-                product launch, this project emphasizes the fusion of technology
-                and art, creating a visually striking and engaging experience.
+                For the Physis Massage Therapy Center, the project entailed an
+                all-encompassing design and development task aimed at
+                revolutionizing their online presence. The goal was to craft a
+                serene, inviting digital space that mirrors the tranquility and
+                healing nature of their services. With an emphasis on simplicity
+                and user comfort, the website was designed to guide visitors
+                effortlessly towards booking their next therapeutic session.
               </p>
 
               <div className="project-sub-info">
                 <div className="sub-col">
-                  <span>Branding</span>
-                  <span>Visual Design</span>
+                  <span>UI/UX</span>
                   <span>Typography</span>
+                  <span>SEO</span>
                   <span>Animation</span>
                 </div>
 
                 <div className="sub-col">
-                  <span>&#x2192; Live Demo</span>
+                  <a
+                    data-cursor="Open Website In A New Tab"
+                    target="_blank"
+                    href="https://physismassage.gr/"
+                  >
+                    &#x2192; Live Website
+                  </a>
                 </div>
               </div>
             </div>
@@ -74,18 +84,69 @@ const SampleProject = () => {
             <img src={ProjectHeroImg2} alt="" />
           </div>
 
+          <div className="project-hero-video">
+            <div className="device">
+              <div className="video-container">
+                {/* Video */}
+                <video
+                  className="overlay-video"
+                  src="https://stergiospappos.me/wp-content/uploads/2024/03/homepage.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                ></video>
+              </div>
+
+              {/* Mockup overlay */}
+              <div
+                className="overlay-device-image"
+                style={{
+                  background: `url('.') center center no-repeat`,
+                  backgroundSize: "cover",
+                }}
+              ></div>
+            </div>
+          </div>
+
           <div className="project-copy">
             <div className="col"></div>
 
             <div className="col">
+              <h2>Problem Solved</h2>
               <p>
-                A visual campaign celebrating the innovation, creativity, and
-                impact of cutting-edge technology at the Global Tech Expo. After
-                a year of virtual events, this project brought technology to
-                life with dynamic visuals and bold messaging, showcasing the
-                future of innovation. The campaign captured the energy and
-                excitement of the tech world, highlighting key moments that
-                defined the event.
+                The primary challenge was to translate the calm and restorative
+                experience of a massage therapy session into a digital format.
+                The center's previous online presence lacked the warmth and
+                inviting atmosphere crucial for attracting and retaining
+                clientele seeking relaxation and healing. Additionally,
+                navigating the site was cumbersome, significantly impacting
+                client bookings and overall user satisfaction.
+              </p>
+              <h2>How It's Solved</h2>
+              <p>
+                I approached this challenge by focusing on creating a visually
+                calming digital environment. Utilizing a soft, soothing colour
+                palette and incorporating fluid, nature-inspired shapes and
+                animations, the website now evokes a sense of peace and
+                relaxation from the first click. The user journey was
+                meticulously planned to ensure that booking a massage was not
+                only intuitive but also part of the calming experience.
+                Interactive elements were introduced sparingly to enhance
+                engagement without overwhelming the senses.
+              </p>
+              <h2>Impact</h2>
+              <p>
+                The redesigned website for Physis Massage Therapy Center has
+                significantly elevated the user experience, mirroring the
+                center's commitment to providing a sanctuary of healing and
+                relaxation. The intuitive design and streamlined booking process
+                have resulted in a noticeable increase in appointment bookings,
+                with client feedback praising the ease of navigation and the
+                tranquil aesthetic. This digital transformation has not only
+                strengthened the center's brand identity but has also expanded
+                its reach, attracting a broader audience seeking therapeutic
+                services.
               </p>
             </div>
           </div>
@@ -115,7 +176,7 @@ const SampleProject = () => {
 
           <div className="next-project-cta">
             <Link to="/">
-              <h1>Next Project</h1>
+              <h3>Next Project</h3>
             </Link>
           </div>
         </div>

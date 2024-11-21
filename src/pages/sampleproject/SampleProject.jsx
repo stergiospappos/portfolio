@@ -4,6 +4,7 @@ import { ReactLenis } from "lenis/react";
 import "./SampleProject.css";
 
 import Transition from "../../components/preview/transition/Transition";
+import DynamicCursor from "../../components/DynamicCursor/DynamicCursor";
 
 import ProjectHeroImg from "../../assets/sample-projects/sample-project-hero-2.jpg";
 import ProjectHeroImg2 from "../../assets/sample-projects/sample-project-hero-3.jpg";
@@ -16,6 +17,7 @@ import ProjectImg4 from "../../assets/sample-projects/sample-project-4.jpg";
 const SampleProject = () => {
   return (
     <ReactLenis root>
+      <DynamicCursor />
       <div className="project">
         <div className="conainer">
           <div className="project-hero-img">

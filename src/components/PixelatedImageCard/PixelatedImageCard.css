@@ -21,6 +21,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  aspect-ratio: 1 / 1;
 }
 
 .pixelated-image-card__active {

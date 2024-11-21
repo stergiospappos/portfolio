@@ -46,8 +46,18 @@ p#archive-category {
   text-align: right;
 }
 
+.info-content-2 li {
+  font-size: 1em;
+}
+
 @media (max-width: 900px) {
   .archive-item {
     width: 100%;
+  }
+}
+
+@media (max-width: 1480px) {
+  .info-content-2 {
+    display: none !important;
   }
 }

@@ -31,7 +31,7 @@
 
 .project-img {
   width: 100%;
-  aspect-ratio: 16/9; /* Ensures consistent image aspect ratio */
+  aspect-ratio: 1/1; /* Ensures consistent image aspect ratio */
   border-radius: 0.5em;
   overflow: hidden;
 }

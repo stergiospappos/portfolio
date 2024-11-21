@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { ReactLenis, useLenis } from "lenis/react";
 
 import "./Information.css";
+import DynamicCursor from "../../components/DynamicCursor/DynamicCursor";
 
 import Transition from "../../components/preview/transition/Transition";
-import DynamicCursor from "../../components/DynamicCursor/DynamicCursor";
 
 import {
   services,
@@ -72,7 +72,9 @@ const Information = () => {
               </div>
 
               <div className="experience">
-                <p>Design Tools</p>
+                <p data-cursor="Crafting visuals with industry-leading tools">
+                  Design Tools
+                </p>
                 <div className="divider"></div>
                 <ul>
                   {designtools.map((item) => (
@@ -83,7 +85,9 @@ const Information = () => {
             </div>
             <div className="col">
               <div className="selected-clients">
-                <p>Development Tools</p>
+                <p data-cursor="Digital solutions with cutting-edge technologies">
+                  Development Tools
+                </p>
                 <div className="divider"></div>
                 <ul>
                   {devtools.map((item) => (
@@ -96,7 +100,9 @@ const Information = () => {
 
           <div className="info-content-2">
             <div className="col">
-              <p>Courses</p>
+              <p data-cursor="Expanding horizons, one course at a time">
+                Courses
+              </p>
               <div className="divider"></div>
               <ul>
                 {courses.map((item) => (
@@ -105,7 +111,9 @@ const Information = () => {
               </ul>
             </div>
             <div className="col">
-              <p>Bootcamps</p>
+              <p data-cursor="Fast-tracking expertise through hands-on learning">
+                Bootcamps
+              </p>
               <div className="divider"></div>
               <ul>
                 {bootcamps.map((item) => (

@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 import "./Navbar.css";
 
-import ArticleImg1 from "../../assets/nav/article-1.png";
-import ArticleImg2 from "../../assets/nav/article-2.png";
-import ArticleImg3 from "../../assets/nav/article-3.png";
+import ArticleImg1 from "../../assets/nav/uae.jpg";
+import ArticleImg2 from "../../assets/nav/available.jpg";
+import ArticleImg3 from "../../assets/nav/radio.jpg";
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
@@ -31,22 +31,23 @@ const Navbar = () => {
 
   const articleItems = [
     {
-      url: "https://www.youtube.com/codegrid",
-      title: "Plause Studio",
-      subTitle: "Agency — Crafting for a minimal experience",
+      url: "",
+      title: "Current Location",
+      subTitle: "Dubai — Crafting in a modern hub",
       img: ArticleImg1,
     },
+
     {
-      url: "https://www.instagram.com/codegridweb/",
-      title: "Awkward",
-      subTitle: "Design for a better future and past",
-      img: ArticleImg2,
+      url: "https://music.apple.com/gr/playlist/creative-playlist/pl.u-2aoq8ZzHGbMaWkx",
+      title: "Creative Radio",
+      subTitle: "Fueling ideas — Play & Create",
+      img: ArticleImg3,
     },
     {
-      url: "https://x.com/codegridweb",
-      title: "Syne",
-      subTitle: "Showcase — Prove for a better website",
-      img: ArticleImg3,
+      url: "",
+      title: "Work Status",
+      subTitle: "Available Q1 2025 — Open for collaboration",
+      img: ArticleImg2,
     },
   ];
 

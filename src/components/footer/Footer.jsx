@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import "./Footer.css";
+import EmailCopyFooter from "../EmailCopy/EmailCopyFooter";
 
 const Footer = () => {
   return (
@@ -8,9 +9,7 @@ const Footer = () => {
       <div className="footer-col">
         <div className="footer-sub-col">
           <div className="footer-link">
-            <Link to="mailto:contact@stergiospappos.me">
-              &#x2192; contact@stergiospappos.me
-            </Link>
+            <EmailCopyFooter />
           </div>
           <div className="footer-link">
             <Link to="#.">&#x2192; Enquiries</Link>

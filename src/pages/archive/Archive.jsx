@@ -5,6 +5,7 @@ import "./Archive.css";
 
 import Transition from "../../components/preview/transition/Transition";
 import Preview from "../../components/preview/Preview";
+import DynamicCursor from "../../components/DynamicCursor/DynamicCursor";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -79,6 +80,7 @@ const Archive = () => {
 
   return (
     <ReactLenis root>
+      <DynamicCursor />
       <div
         className="archive"
         ref={containerRef}

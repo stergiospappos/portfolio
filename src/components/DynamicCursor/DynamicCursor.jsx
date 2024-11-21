@@ -56,11 +56,7 @@ const DynamicCursor = ({ targetsData }) => {
     const handleMouseLeave = () => {
       // First, hide the cursor
       setIsVisible(false);
-
-      // Add a small delay before clearing the text to avoid the empty box issue
-      setTimeout(() => {
-        setCurrentText(""); // Clear the text
-      }, 200); // Delay matches the CSS transition duration (0.2s)
+      setCurrentText("");
     };
 
     // Attach event listeners to elements with the `data-cursor` attribute
