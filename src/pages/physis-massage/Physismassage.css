@@ -102,12 +102,6 @@
   .project-imgs {
     flex-direction: column;
   }
-
-  .project-slider-1 {
-    height: calc(
-      100vw * 1080 / 1819
-    ) !important; /* Dynamically calculate based on viewport width */
-  }
 }
 
 .project-copy h2 {
@@ -115,6 +109,22 @@
   margin-bottom: 0.3em;
 }
 
-.project-slider-1 {
-  height: calc(120vh * 1080 / 1819);
+/* Swiper */
+@media (max-width: 900px) {
+  .project-slider-1 {
+    height: calc(100vw * 1080 / 1819) !important;
+  }
 }
+.swiper {
+  max-width: 1200px;
+  overflow: clip;
+}
+.project-slider-1 {
+  height: calc(100vh * 1080 / 1819);
+}
+
+.swiper-horizontal > .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  bottom: var(--swiper-scrollbar-bottom, 10px) !important;
+}
+/* End Swiper */

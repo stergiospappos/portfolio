@@ -1,7 +1,7 @@
 import Spline from "@splinetool/react-spline";
 import "./Spline.css";
 
-function SunSet() {
+function SunSetSpline() {
   return (
     <div className="background">
       <Spline scene="https://prod.spline.design/HJ9kTwR9yYYOxyBW/scene.splinecode" />
@@ -9,4 +9,4 @@ function SunSet() {
   );
 }
 
-export default SunSet;
+export default SunSetSpline;

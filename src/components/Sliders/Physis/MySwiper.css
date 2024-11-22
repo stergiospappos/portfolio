@@ -7,9 +7,8 @@
 .swiper {
   user-select: none;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: visible;
   width: 100%;
-  max-width: 1200px;
 
   height: 100%;
 
@@ -48,8 +47,4 @@
   top: 0;
   width: 100%;
   height: 100%;
-}
-.swiper-horizontal > .swiper-scrollbar,
-.swiper-scrollbar.swiper-scrollbar-horizontal {
-  bottom: var(--swiper-scrollbar-bottom, 10px) !important;
 }
