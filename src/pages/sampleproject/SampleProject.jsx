@@ -19,7 +19,7 @@ const SampleProject = () => {
     <ReactLenis root>
       <DynamicCursor />
       <div className="project">
-        <div className="conainer">
+        <div className="container">
           <div className="project-hero-img">
             <img src={ProjectHeroImg} alt="Project Hero Img" />
           </div>
