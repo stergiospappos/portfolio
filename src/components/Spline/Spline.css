@@ -5,14 +5,16 @@
   left: 0;
   bottom: 0;
   z-index: 1;
+  pointer-events: auto; /* Ensure canvas is interactive */
 }
 
 .hero-header {
   position: relative;
   z-index: 2;
+  pointer-events: none; /* Disable interactions for the container */
 }
 
-.navbar,
-.footer {
-  z-index: 3;
+#hero-link-01,
+#hero-link-02 {
+  pointer-events: auto; /* Enable interactions for links specifically */
 }
