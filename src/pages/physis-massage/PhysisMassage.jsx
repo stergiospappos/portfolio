@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ReactLenis } from "lenis/react";
 
 import "./Physismassage.css";
+import PhysisSwiper from "../../components/Sliders/Physis/PhysisSwiper";
 
 import Transition from "../../components/preview/transition/Transition";
 import DynamicCursor from "../../components/DynamicCursor/DynamicCursor";
@@ -81,32 +82,7 @@ const SampleProject = () => {
           </div>
 
           <div className="project-hero-img-2">
-            <img src={ProjectHeroImg2} alt="" />
-          </div>
-
-          <div className="project-hero-video">
-            <div className="device">
-              <div className="video-container">
-                {/* Video */}
-                <video
-                  className="overlay-video"
-                  src="https://stergiospappos.me/wp-content/uploads/2024/03/homepage.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                ></video>
-              </div>
-
-              {/* Mockup overlay */}
-              <div
-                className="overlay-device-image"
-                style={{
-                  background: `url(&apos;.&apos;) center center no-repeat`,
-                  backgroundSize: "cover",
-                }}
-              ></div>
-            </div>
+            <PhysisSwiper />
           </div>
 
           <div className="project-copy">
