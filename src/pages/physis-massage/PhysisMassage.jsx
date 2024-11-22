@@ -81,7 +81,7 @@ const SampleProject = () => {
             </div>
           </div>
 
-          <div className="project-hero-img-2">
+          <div className="project-slider-1">
             <PhysisSwiper />
           </div>
 

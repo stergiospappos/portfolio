@@ -102,58 +102,19 @@
   .project-imgs {
     flex-direction: column;
   }
+
+  .project-slider-1 {
+    height: calc(
+      100vw * 1080 / 1819
+    ) !important; /* Dynamically calculate based on viewport width */
+  }
 }
 
 .project-copy h2 {
   margin-top: 1em;
   margin-bottom: 0.3em;
 }
-/* Device Wrapper */
-.device {
-  position: relative;
-  width: 100%; /* Full width for responsiveness */
-  max-width: 1200px; /* Adjust based on the design */
-  margin: 0 auto; /* Center the mockup */
-  aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
-}
 
-/* Video Container */
-.video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* Below the mockup */
-  overflow: hidden; /* Ensures the video stays within the bounds */
-}
-
-/* Video Styling */
-.overlay-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the video scales properly */
-}
-
-/* Mockup Overlay */
-.overlay-device-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2; /* Above the video */
-  pointer-events: none; /* Prevent interactions with the mockup */
-}
-@media (max-width: 768px) {
-  .device {
-    max-width: 90%;
-  }
-}
-
-@media (max-width: 480px) {
-  .device {
-    max-width: 100%;
-    aspect-ratio: 3 / 4; /* Adjust aspect ratio for smaller devices */
-  }
+.project-slider-1 {
+  height: calc(120vh * 1080 / 1819);
 }
