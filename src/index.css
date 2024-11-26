@@ -40,19 +40,19 @@
 @font-face {
   font-family: "PPNeueMontreal";
   font-weight: 300;
-  src: url("./assets/fonts/PPNeueMontreal-Book.woff") format("truetype");
+  src: url("/assets/fonts/PPNeueMontreal-Book.woff") format("truetype");
 }
 
 @font-face {
   font-family: "PPNeueMontreal";
   font-weight: 500;
-  src: url("./assets/fonts/PPNeueMontreal-Medium.woff") format("truetype");
+  src: url("/assets/fonts/PPNeueMontreal-Medium.woff") format("truetype");
 }
 
 @font-face {
   font-family: "PPNeueMontreal";
   font-weight: 700;
-  src: url("./assets/fonts/PPNeueMontreal-Bold.woff") format("truetype");
+  src: url("/assets/fonts/PPNeueMontreal-Bold.woff") format("truetype");
 }
 
 * {

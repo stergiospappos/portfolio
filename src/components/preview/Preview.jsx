@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./Preview.css";
 
 import { previewImgs } from "./previewImages";
-import tickSfx from "../../assets/sfx/tick.wav";
+import tickSfx from "/assets/sfx/tick.wav";
 
 const defaultPreviewImg = previewImgs[0];
 const buffer = 100;

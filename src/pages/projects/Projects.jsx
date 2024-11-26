@@ -1,92 +1,23 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { ReactLenis, useLenis } from "lenis/react";
+import { ReactLenis } from "lenis/react";
 
 import "./Projects.css";
 import PixelatedImageCard from "../../components/PixelatedImageCard/PixelatedImageCard";
-
 import Transition from "../../components/preview/transition/Transition";
 import DynamicCursor from "../../components/DynamicCursor/DynamicCursor";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import projects from "../../data/projects"; // Import the updated projects.js
 gsap.registerPlugin(ScrollTrigger);
 
-import ProjectImg1 from "../../assets/projects/project1.jpg";
-import ProjectImg2 from "../../assets/projects/project2.jpg";
-import ProjectImg3 from "../../assets/projects/project3.jpg";
-import ProjectImg4 from "../../assets/projects/project4.jpg";
-import ProjectImg5 from "../../assets/projects/project5.jpg";
-import ProjectImg6 from "../../assets/projects/project6.jpg";
-
-import PhysisImg1 from "../../assets/projects/physis-massage/projects-physis-img1.avif";
-import PhysisImg2 from "../../assets/projects/physis-massage/projects-physis-img2.avif";
-
 const Projects = () => {
-  const [projectList, setProjectList] = useState([]);
-  const containerRef = useRef(null);
-  const lenis = useLenis(({ scroll }) => {});
-
-  const projects = [
-    {
-      name: "Physis Massage",
-      category: "Web Design & Development",
-      img: PhysisImg1,
-      activeImg: PhysisImg2,
-      slug: "physis-massage",
-    },
-    {
-      name: "Echoes of Light",
-      category: "Digital Illustration",
-      img: ProjectImg2,
-      activeImg: ProjectImg3,
-      slug: "sample-project",
-    },
-    {
-      name: "Urban Symphony",
-      category: "Environmental Design",
-      img: ProjectImg3,
-      activeImg: ProjectImg4,
-      slug: "sample-project",
-    },
-    {
-      name: "Fragmented Reality",
-      category: "3D Animation",
-      img: ProjectImg4,
-      activeImg: ProjectImg5,
-      slug: "sample-project",
-    },
-    {
-      name: "Luminous Flux",
-      category: "Motion Graphics",
-      img: ProjectImg5,
-      activeImg: ProjectImg6,
-      slug: "sample-project",
-    },
-    {
-      name: "Reflections",
-      category: "Interactive Media",
-      img: ProjectImg6,
-      activeImg: ProjectImg2,
-      slug: "sample-project",
-    },
-  ];
+  const containerRef = useRef(null); // Ref for the container
 
   useEffect(() => {
-    const initialSet = Array(30)
-      .fill()
-      .flatMap((_, i) =>
-        projects.map((project, j) => ({
-          ...project,
-          name: `${project.name}`,
-          url: `projects/${project.name.trim()}`,
-        }))
-      );
-    setProjectList(initialSet);
-  }, []);
-
-  useEffect(() => {
-    if (containerRef.current && projectList.length > 0) {
+    if (containerRef.current) {
+      // Setup ScrollTrigger for infinite scrolling
       ScrollTrigger.create({
         scroller: containerRef.current,
         start: 0,
@@ -103,6 +34,8 @@ const Projects = () => {
 
       const projectItems =
         containerRef.current.querySelectorAll(".project-item");
+
+      // GSAP animations for project items
       projectItems.forEach((item) => {
         gsap.to(item, {
           opacity: 1,
@@ -119,7 +52,7 @@ const Projects = () => {
         });
       });
     }
-  }, [projectList]);
+  }, []);
 
   return (
     <ReactLenis root>
@@ -129,25 +62,28 @@ const Projects = () => {
         ref={containerRef}
         style={{
           height: "100vh",
-          //  overflowY: "auto"
-          // to enable infinite scrolling, uncomment `overflowY: "auto"` and remove the <ReactLenis root> component from root
+          // Uncomment for overflow scrolling
+          // overflowY: "auto"
         }}
       >
         <div className="container">
-          {projectList.map((project) => (
-            <div className="row" key={Math.random(2)}>
+          {/* Render each project dynamically */}
+          {projects.map((project, index) => (
+            <div className="row" key={index}>
               <div className="project-item">
                 <div className="project-img">
-                  <Link to={`/projects/${project.slug}`}>
+                  <Link to={`/projects/${project.id}`}>
                     <PixelatedImageCard
-                      defaultImg={project.img}
-                      activeImg={project.activeImg}
+                      defaultImg={project.coverImage} // Render default image
+                      activeImg={project.hoverImage} // Render active image
                     />
                   </Link>
                 </div>
                 <div className="project-details">
-                  <p id="project-name"> &#x2192; {project.name}</p>
-                  <p id="project-category">{project.category}</p>
+                  <p id="project-name"> &#x2192; {project.title}</p>{" "}
+                  {/* Project title */}
+                  <p id="project-category">{project.category}</p>{" "}
+                  {/* Project category */}
                 </div>
               </div>
             </div>

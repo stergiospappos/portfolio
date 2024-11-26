@@ -38,8 +38,8 @@
 .swiper-slide-6227 {
   background-color: rgba(19, 19, 18, 1);
 }
-.swiper-slide-bg-image-7cef {
-  object-fit: contain;
+.swiper-slide-bg-image {
+  object-fit: contain !important;
 }
 
 /* Swiper */

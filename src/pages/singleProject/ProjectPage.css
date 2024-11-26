@@ -103,3 +103,42 @@
     flex-direction: column;
   }
 }
+
+.project-copy h2 {
+  margin-top: 1em;
+  margin-bottom: 0.3em;
+}
+
+.project-copy p {
+  color: var(--color-neutral-500);
+}
+
+.project h1 {
+  max-width: 12ch;
+}
+:root {
+  --section-padding: clamp(5em, 21vh, 12em);
+}
+@media screen and (max-width: 1200px) {
+  :root {
+    --container-padding: 6vw;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  :root {
+    --section-padding: 12vh;
+  }
+}
+.section {
+  padding-top: calc(var(--section-padding) / 2);
+  padding-bottom: calc(var(--section-padding) / 2);
+}
+
+.simple-player {
+  max-width: 1100px;
+}
+
+.sub-col .nav-link {
+  padding: 0.75em 1.25em;
+}

@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 import "./Navbar.css";
 
-import ArticleImg1 from "../../assets/nav/uae.jpg";
-import ArticleImg2 from "../../assets/nav/available.jpg";
-import ArticleImg3 from "../../assets/nav/radio.jpg";
+import ArticleImg1 from "/assets/nav/uae.jpg";
+import ArticleImg2 from "/assets/nav/available.jpg";
+import ArticleImg3 from "/assets/nav/radio.jpg";
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
