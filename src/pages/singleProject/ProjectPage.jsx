@@ -101,7 +101,7 @@ const ProjectPage = () => {
                 src={project.videoAssets.shortClip}
                 poster={project.galleryImages[0]}
                 type="video/mp4"
-                autoPlayEnabled
+                autoPlayEnabled={true}
               />
             </section>
           )}
