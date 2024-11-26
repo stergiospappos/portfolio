@@ -7,9 +7,12 @@ const projects = [
     tagline: "Serene, Inviting Digital Space", // A short project summary or slogan
 
     // Images
-    coverImage: "/assets/projects/physis-massage/physis-project-hero.avif", // Main cover image displayed in listings
-    hoverImage: "/assets/projects/physis-massage/projects-physis-img2.avif", // Image shown on hover
-    heroImage: "/assets/projects/physis-massage/physis-project-hero.avif", // Full-width hero image for the project page
+    coverImage:
+      "/assets/projects/physis-massage/images/coverImg_physismassage.avif", // Main cover image displayed in listings
+    hoverImage:
+      "/assets/projects/physis-massage/images/hoverImg_physismassage.avif", // Image shown on hover
+    heroImage:
+      "/assets/projects/physis-massage/images/heroImg_physismassage.avif", // Full-width hero image for the project page
 
     // Description
     summary:
@@ -17,31 +20,31 @@ const projects = [
 
     // Gallery and Media
     galleryImages: [
-      "/assets/projects/physis-massage/physis-project-hero.avif",
-      "/assets/projects/physis-massage/physis_massage_img3.avif",
-      "/assets/projects/physis-massage/physis_massage_img4.avif",
-      "/assets/projects/physis-massage/physis_massage_img5.avif",
-      "/assets/projects/physis-massage/physis_massage_img7.avif",
-      "/assets/projects/physis-massage/physis_massage_img8.avif",
+      "/assets/projects/physis-massage/images/slider/sliderImg1_physismassage.avif",
+      "/assets/projects/physis-massage/images/slider/sliderImg2_physismassage.avif",
+      "/assets/projects/physis-massage/images/slider/sliderImg3_physismassage.avif",
+      "/assets/projects/physis-massage/images/slider/sliderImg4_physismassage.avif",
+      "/assets/projects/physis-massage/images/slider/sliderImg5_physismassage.avif",
+      "/assets/projects/physis-massage/images/slider/sliderImg6_physismassage.avif",
     ],
     mobilePreviews: [
       {
-        src: "/assets/projects/physis-massage/mobile1.png",
+        src: "/assets/projects/physis-massage/images/mobile/mobileScreen1_physismassage.avif",
         alt: "Mobile Screen 1",
       },
       {
-        src: "/assets/projects/physis-massage/mobile2.png",
+        src: "/assets/projects/physis-massage/images/mobile/mobileScreen2_physismassage.avif",
         alt: "Mobile Screen 2",
       },
       {
-        src: "/assets/projects/physis-massage/mobile3.png",
+        src: "/assets/projects/physis-massage/images/mobile/mobileScreen3_physismassage.avif",
         alt: "Mobile Screen 3",
       },
     ],
     videoAssets: {
-      feature: "/assets/projects/physis-massage/Physis-New-video.mp4", // Primary video asset
-      secondary: "/assets/projects/physis-massage/Physis_Packages_MacBook.mp4", // Additional video asset
-      shortClip: "/assets/projects/physis-massage/Physis_Menu.mp4", // Short-form video clip
+      feature: "/assets/projects/physis-massage/videos/PhysisVideo1.mp4", // Primary video asset
+      secondary: "/assets/projects/physis-massage/videos/PhysisVideo2.mp4", // Additional video asset
+      shortClip: "/assets/projects/physis-massage/videos/PhysisVideo3.mp4", // Short-form video clip
     },
 
     // Metadata

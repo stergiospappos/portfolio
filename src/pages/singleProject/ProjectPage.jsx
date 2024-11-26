@@ -37,7 +37,7 @@ const ProjectPage = () => {
       </Helmet>
       <DynamicCursor />
 
-      <div className="project">
+      <div className="project" id={project.id}>
         <div className="container">
           <section className="project-hero-img">
             <img src={project.heroImage} alt={`${project.title} Hero`} />

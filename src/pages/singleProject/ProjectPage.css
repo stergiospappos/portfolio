@@ -143,6 +143,16 @@
   padding: 0.75em 1.25em;
 }
 
+.section {
+  padding: 8em 1.5em;
+}
+
+.swiper-horizontal > .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  width: calc(100% - 5 * var(--swiper-scrollbar-sides-offset, 5%)) !important;
+  left: var(--swiper-scrollbar-sides-offset, 12.5%) !important;
+}
+
 @media only screen and (max-width: 768px) {
   .project-hero-img,
   .project-hero-img-2 {
@@ -156,4 +166,19 @@
   .container {
     padding: 0;
   }
+}
+
+.slider {
+  margin-bottom: 5em;
+}
+
+/*PROJECT SPECIFIC CSS*/
+
+#physis-massage > div > section:nth-child(5),
+#physis-massage > div > section.section.mobiles-screens {
+  background-color: #e3cda6;
+}
+#physis-massage .swiper-button-prev,
+.swiper-button-next {
+  background-color: #e3cda6 !important;
 }
