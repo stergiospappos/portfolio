@@ -7,7 +7,7 @@ import Transition from "../../components/preview/transition/Transition";
 import DynamicCursor from "../../components/DynamicCursor/DynamicCursor";
 import EmailCopyHome from "../../components/EmailCopy/EmailCopyHome";
 
-import SunSetSpline from "../../components/Spline/Sunset";
+import Chips from "../../components/Spline/Chips";
 
 const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
@@ -77,7 +77,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <SunSetSpline />
+      <Chips />
     </>
   );
 };

@@ -5,6 +5,7 @@ import "./Information.css";
 import DynamicCursor from "../../components/DynamicCursor/DynamicCursor";
 
 import Transition from "../../components/preview/transition/Transition";
+import MobileMenu from "../../components/navbar/mobile-navbar/mobileNavbar";
 
 import {
   services,

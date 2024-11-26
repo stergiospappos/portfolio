@@ -1,0 +1,93 @@
+/* ------- Scoped Styles for Mobile Menu ------- */
+
+:root {
+  --cubic-default: cubic-bezier(0.65, 0.05, 0, 1);
+  --duration-default: 0.735s;
+  --animation-default: var(--duration-default) var(--cubic-default);
+  --gap: 2em;
+  --section-padding: calc(3.5em + (var(--gap) * 2));
+  --container-padding: 2em;
+  --header-height: calc(1.5em + (var(--gap) * 2));
+  --footer-height: calc(2.785em + (var(--gap) * 2));
+}
+
+@font-face {
+  font-family: "PP Neue Corp Tight";
+  src: url("https://cdn.prod.website-files.com/673af51dea86ab95d124c3ee/673b0f5784f7060c0ac05534_PPNeueCorp-TightUltrabold.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.osmo-ui {
+  z-index: 0;
+  pointer-events: none;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.nav-row__right {
+  grid-column-gap: 0.625rem;
+  grid-row-gap: 0.625rem;
+  pointer-events: auto;
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+}
+
+.cloneable {
+  padding: var(--section-padding) var(--container-padding);
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+  display: flex;
+  position: relative;
+  --menu-padding: 2em;
+}
+
+.menu-button {
+  grid-column-gap: 0.625em;
+  grid-row-gap: 0.625em;
+  background-color: #0000;
+  justify-content: flex-end;
+  align-items: center;
+  margin: -1em;
+  padding: 1em;
+  display: flex;
+  border: none;
+}
+
+.menu-button-icon {
+  width: 1em;
+  height: 1em;
+}
+
+.menu-button-text {
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 1.125em;
+  display: flex;
+  overflow: hidden;
+}
+
+.icon-wrap {
+  transition: transform 0.4s cubic-bezier(0.65, 0.05, 0, 1);
+}
+
+.osmo-icon-svg {
+  width: 8em;
+}
+
+@media screen and (max-width: 767px) {
+  .nav-row__right {
+    grid-column-gap: 0rem;
+    grid-row-gap: 0rem;
+  }
+
+  .cloneable {
+    --menu-padding: 1em;
+  }
+}
