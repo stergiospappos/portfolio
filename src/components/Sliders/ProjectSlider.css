@@ -1,0 +1,78 @@
+/** Swiper styles **/
+
+:root {
+  --swiper-navigation-color: rgba(255, 255, 255, 1);
+  --swiper-scrollbar-bg-color: rgba(255, 255, 255, 0.17);
+}
+
+.swiper {
+  user-select: none;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+
+  height: 100%;
+  border-radius: 0.3em;
+  padding: 0px 0px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.swiper-slide-bg-image {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.swiper-slide-6227 {
+  background-color: rgba(19, 19, 18, 1);
+}
+.swiper-slide-bg-image-7cef {
+  object-fit: contain;
+}
+
+/* Swiper */
+@media (max-width: 900px) {
+  .project-slider-1 {
+    height: calc(100vw * 1080 / 1819) !important;
+  }
+}
+.swiper {
+  max-width: 1200px;
+  overflow: clip;
+  transition: all 0.65s cubic-bezier(0.65, 0.05, 0, 1) !important;
+}
+.project-slider-1 {
+  height: 800px;
+}
+
+.swiper-horizontal > .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  bottom: var(--swiper-scrollbar-bottom, 10px) !important;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 14px;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: #000;
+  background-color: var(--color-accent);
+  border-radius: 10.25rem;
+  width: 2.5em;
+  height: 2.5em;
+  padding: 0.625em;
+}
+
+/* End Swiper */

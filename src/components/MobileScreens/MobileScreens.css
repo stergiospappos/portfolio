@@ -1,0 +1,28 @@
+.image-scroller {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.image-wrapper {
+  flex: 1;
+  max-width: 33.33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-image {
+  width: 68%;
+  height: auto;
+
+  border-radius: 0.3em;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .mobile-image {
+    width: 90%;
+  }
+}

@@ -9,9 +9,8 @@ import Home from "./pages/home/Home";
 import Projects from "./pages/projects/Projects";
 import Archive from "./pages/archive/Archive";
 import Information from "./pages/information/Information";
-import SampleProject from "./pages/sampleproject/SampleProject";
-import PhysisMassage from "./pages/physis-massage/PhysisMassage";
-
+import SampleProject from "./pages/projects/sampleproject/SampleProject";
+import PhysisMassage from "./pages/projects/physis-massage/PhysisMassage";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
