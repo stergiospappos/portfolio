@@ -172,13 +172,55 @@
   margin-bottom: 5em;
 }
 
+/*NEXT PROJECT*/
+
+.next-project-cta {
+  text-align: center;
+  padding: 1.5em;
+}
+
+.next-project-preview {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.next-project-preview img {
+  max-width: 800px;
+  height: auto;
+  border-radius: 0.3em;
+  transition: transform 0.55s cubic-bezier(0.65, 0.05, 0, 1);
+}
+
+.next-project-preview h3 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+.next-project-preview:hover img {
+  transform: scale(0.8);
+}
+
 /*PROJECT SPECIFIC CSS*/
 
 #physis-massage > div > section:nth-child(5),
 #physis-massage > div > section.section.mobiles-screens {
-  background-color: #e3cda6;
+  background-color: #e3cda6 !important;
 }
 #physis-massage .swiper-button-prev,
 .swiper-button-next {
   background-color: #e3cda6 !important;
+}
+
+#efrosini-goudi > div > section:nth-child(5),
+#efrosini-goudi > div > section.section.mobiles-screens {
+  background-color: #d7d0c1 !important;
+}
+
+#efrosini-goudi .swiper-button-prev,
+.swiper-button-next {
+  background-color: #d7d0c1 !important;
 }

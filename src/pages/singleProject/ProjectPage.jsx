@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 import { useParams, Link } from "react-router-dom";
 import { ReactLenis } from "lenis/react";
 import { Helmet } from "react-helmet";
@@ -17,11 +18,19 @@ import DynamicCursor from "../../components/DynamicCursor/DynamicCursor";
 
 const ProjectPage = () => {
   const { slug } = useParams();
-  const project = projects.find((p) => p.id === slug);
+  const projectIndex = projects.findIndex((p) => p.id === slug);
+  const project = projects[projectIndex];
 
   if (!project) {
     return <h1>404: Project Not Found</h1>;
   }
+
+  // Determine the next project (loop to the first if on the last project)
+  const nextProject = projects[(projectIndex + 1) % projects.length];
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Instantly scrolls to the top
+  }, [location.pathname]);
 
   return (
     <ReactLenis root>
@@ -141,9 +150,17 @@ const ProjectPage = () => {
             </section>
           )}
 
+          {/* Next Project CTA */}
           <div className="next-project-cta">
-            <Link to="/">
-              <h3>Next Project</h3>
+            <Link to={`/projects/${nextProject.id}`}>
+              <div className="next-project-preview">
+                <h3>Next Project</h3>
+                <img
+                  src={nextProject.hoverImage}
+                  alt={`${nextProject.title} Hover`}
+                />
+                <h3>{nextProject.title}</h3>
+              </div>
             </Link>
           </div>
         </div>

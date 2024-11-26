@@ -28,6 +28,11 @@ function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location.pathname]);
 
+  // Check if the current route is a single project page
+  const isSingleProjectPage =
+    location.pathname.startsWith("/projects/") &&
+    location.pathname !== "/projects";
+
   return (
     <>
       <Navbar />
@@ -40,7 +45,7 @@ function App() {
           <Route path="/projects/:slug" element={<ProjectPage />} />
         </Routes>
       </AnimatePresence>
-      <Footer />
+      {!isSingleProjectPage && <Footer />}
     </>
   );
 }
