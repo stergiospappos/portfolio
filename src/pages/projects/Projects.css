@@ -1,9 +1,19 @@
 /* Base Styles */
 .projects {
-  width: 100%;
+  width: 100% !important;
+  height: 100% !important;
+  overflow-y: auto;
+  position: relative;
   padding: 10em 0;
+  overflow-y: auto; /* Allow vertical scrolling */
 }
 
+.projects .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2em; /* Respect your provided gap */
+}
 .projects .row {
   width: 100%;
   padding: 1.5em;
@@ -89,8 +99,3 @@
   object-fit: cover;
   object-position: center;
 }
-
-/* Flexbox enhancements */
-.projects .row {
-  gap: 2em;
-} /* Adding gap between project items for better spacing */

@@ -224,3 +224,12 @@
 .swiper-button-next {
   background-color: #d7d0c1 !important;
 }
+
+#filoxeni-aitatoglou > div > section:nth-child(5),
+#filoxeni-aitatoglou > div > section.section.mobiles-screens {
+  background-color: #242424 !important;
+}
+#filoxeni-aitatoglou .swiper-button-prev,
+.swiper-button-next {
+  background-color: #eae1d4 !important;
+}

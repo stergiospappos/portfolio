@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ReactLenis } from "lenis/react";
 
@@ -9,50 +9,75 @@ import DynamicCursor from "../../components/DynamicCursor/DynamicCursor";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import projects from "../../data/projects"; // Import the updated projects.js
+import projects from "../../data/projects"; // Your projects.js
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
-  const containerRef = useRef(null); // Ref for the container
+  const containerRef = useRef(null);
+  const [projectList, setProjectList] = useState([]);
 
+  // Dynamically generate infinite project list
   useEffect(() => {
-    if (containerRef.current) {
-      // Setup ScrollTrigger for infinite scrolling
-      ScrollTrigger.create({
-        scroller: containerRef.current,
+    const initialSet = Array(30)
+      .fill()
+      .flatMap((_, i) =>
+        projects.map((project, j) => ({
+          ...project,
+          id: i * projects.length + j,
+        }))
+      );
+    setProjectList(initialSet);
+  }, []);
+
+  // Infinite scroll and animations setup
+  useEffect(() => {
+    const container = containerRef.current;
+
+    if (container && projectList.length > 0) {
+      // ScrollTrigger infinite scroll logic
+      const maxScroll = container.scrollHeight - container.clientHeight;
+
+      const scrollTriggerInstance = ScrollTrigger.create({
+        scroller: container,
         start: 0,
         end: "max",
-        onLeave: (self) => {
-          self.scroll(1);
-          ScrollTrigger.update();
-        },
-        onLeaveBack: (self) => {
-          self.scroll(ScrollTrigger.maxScroll(containerRef.current) - 1);
-          ScrollTrigger.update();
+        onUpdate: (self) => {
+          if (self.progress >= 1) {
+            container.scrollTop = 1; // Loop to start
+          } else if (self.progress <= 0) {
+            container.scrollTop = maxScroll - 1; // Loop to end
+          }
         },
       });
-
-      const projectItems =
-        containerRef.current.querySelectorAll(".project-item");
 
       // GSAP animations for project items
+      const projectItems = container.querySelectorAll(".project-item");
       projectItems.forEach((item) => {
-        gsap.to(item, {
-          opacity: 1,
-          repeat: 1,
-          yoyo: true,
-          ease: "none",
-          scrollTrigger: {
-            scroller: containerRef.current,
-            trigger: item,
-            start: "center bottom",
-            end: "center top",
-            scrub: true,
-          },
-        });
+        gsap.fromTo(
+          item,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            ease: "power1.out",
+            scrollTrigger: {
+              scroller: container,
+              trigger: item,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
       });
+
+      // Cleanup on unmount
+      return () => {
+        scrollTriggerInstance.kill();
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      };
     }
-  }, []);
+  }, [projectList]);
 
   return (
     <ReactLenis root>
@@ -62,28 +87,25 @@ const Projects = () => {
         ref={containerRef}
         style={{
           height: "100vh",
-          // Uncomment for overflow scrolling
-          // overflowY: "auto"
+          overflowY: "auto",
         }}
       >
         <div className="container">
           {/* Render each project dynamically */}
-          {projects.map((project, index) => (
-            <div className="row" key={index}>
+          {projectList.map((project, index) => (
+            <div className="row" key={project.id}>
               <div className="project-item">
                 <div className="project-img">
                   <Link to={`/projects/${project.id}`}>
                     <PixelatedImageCard
-                      defaultImg={project.coverImage} // Render default image
-                      activeImg={project.hoverImage} // Render active image
+                      defaultImg={project.coverImage}
+                      activeImg={project.hoverImage}
                     />
                   </Link>
                 </div>
                 <div className="project-details">
-                  <p id="project-name"> &#x2192; {project.title}</p>{" "}
-                  {/* Project title */}
-                  <p id="project-category">{project.category}</p>{" "}
-                  {/* Project category */}
+                  <p id="project-name"> &#x2192; {project.title}</p>
+                  <p id="project-category">{project.category}</p>
                 </div>
               </div>
             </div>
