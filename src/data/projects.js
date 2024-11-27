@@ -1,6 +1,7 @@
 const projects = [
   {
-    id: "physis-massage", // Unique identifier for the project (used as a slug)
+    id: 1,
+    slug: "physis-massage", // Unique identifier for the project (used as a slug)
     title: "Physis Massage", // Displayed title of the project
     category: "Web Design & Development", // The type or field of the project
 
@@ -65,7 +66,8 @@ const projects = [
     liveLink: "https://physismassage.gr/", // Link to the live project
   },
   {
-    id: "efrosini-goudi", // Unique identifier for the project (used as a slug)
+    id: 2,
+    slug: "efrosini-goudi", // Unique identifier for the project (used as a slug)
     title: "Efrosini Goudi", // Displayed title of the project
     category: "Web Design & Development", // The type or field of the project
 
@@ -130,7 +132,8 @@ const projects = [
     liveLink: "https://efrosinigoudi.gr/", // Link to the live project
   },
   {
-    id: "filoxeni-aitatoglou", // Unique identifier for the project (used as a slug)
+    id: 3,
+    slug: "filoxeni-aitatoglou", // Unique identifier for the project (used as a slug)
     title: "Filoxeni Aitatoglou", // Displayed title of the project
     category: "Web Design & Development", // The type or field of the project
 
@@ -197,7 +200,8 @@ const projects = [
     liveLink: "https://aitatoglou.gr/", // Link to the live project
   },
   {
-    id: "rafaelias-brides", // Unique identifier for the project (used as a slug)
+    id: 4,
+    slug: "rafaelias-brides", // Unique identifier for the project (used as a slug)
     title: "Rafaelias Brides", // Displayed title of the project
     category: "Web Design & Development", // The type or field of the project
 
@@ -262,7 +266,8 @@ const projects = [
     liveLink: "https://rafaeliasbrides.gr/", // Link to the live project
   },
   {
-    id: "baby-house", // Unique identifier for the project (used as a slug)
+    id: 5,
+    slug: "baby-house", // Unique identifier for the project (used as a slug)
     title: "Baby House", // Displayed title of the project
     category: "eCommerce Design & Development", // The type or field of the project
 
@@ -324,7 +329,8 @@ const projects = [
     liveLink: "https://babyhousestore.gr/", // Link to the live project
   },
   {
-    id: "desing-lux-vacays", // Unique identifier for the project (used as a slug)
+    id: 6,
+    slug: "desing-lux-vacays", // Unique identifier for the project (used as a slug)
     title: "Design Luxury Vacays", // Displayed title of the project
     category: "Web Design & Development", // The type or field of the project
 

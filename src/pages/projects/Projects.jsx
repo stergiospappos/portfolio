@@ -16,14 +16,13 @@ const Projects = () => {
   const containerRef = useRef(null);
   const [projectList, setProjectList] = useState([]);
 
-  // Dynamically generate infinite project list
   useEffect(() => {
     const initialSet = Array(30)
       .fill()
       .flatMap((_, i) =>
         projects.map((project, j) => ({
           ...project,
-          id: i * projects.length + j,
+          id: `${i}-${j}`, // Generate a unique id using a combination of indices
         }))
       );
     setProjectList(initialSet);
@@ -92,20 +91,22 @@ const Projects = () => {
       >
         <div className="container">
           {/* Render each project dynamically */}
-          {projectList.map((project, index) => (
+          {projectList.map((project) => (
             <div className="row" key={project.id}>
               <div className="project-item">
                 <div className="project-img">
-                  <Link to={`/projects/${project.id}`}>
+                  <Link to={`/projects/${project.slug}`}>
                     <PixelatedImageCard
-                      defaultImg={project.coverImage}
-                      activeImg={project.hoverImage}
+                      defaultImg={project.coverImage} // Render default image
+                      activeImg={project.hoverImage} // Render active image
                     />
                   </Link>
                 </div>
                 <div className="project-details">
-                  <p id="project-name"> &#x2192; {project.title}</p>
-                  <p id="project-category">{project.category}</p>
+                  <p id="project-name"> &#x2192; {project.title}</p>{" "}
+                  {/* Project title */}
+                  <p id="project-category">{project.category}</p>{" "}
+                  {/* Project category */}
                 </div>
               </div>
             </div>

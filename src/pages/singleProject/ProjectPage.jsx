@@ -18,32 +18,41 @@ import DynamicCursor from "../../components/DynamicCursor/DynamicCursor";
 
 const ProjectPage = () => {
   const { slug } = useParams();
-  const projectIndex = projects.findIndex((p) => p.id === slug);
+  const projectIndex = projects.findIndex((p) => p.slug === slug);
   const project = projects[projectIndex];
 
   if (!project) {
-    return <h1>404: Project Not Found</h1>;
+    return (
+      <div className="not-found">
+        <h1>404: Project Not Found</h1>
+        <p>The project you're looking for doesn't exist.</p>
+        <Link to="/projects">Back to Projects</Link>
+      </div>
+    );
   }
 
   // Determine the next project (loop to the first if on the last project)
-  const nextProject = projects[(projectIndex + 1) % projects.length];
+  const currentIndex = projects.findIndex((p) => p.slug === slug);
+  const nextProject = projects[(currentIndex + 1) % projects.length];
 
   useEffect(() => {
     window.scrollTo(0, 0); // Instantly scrolls to the top
-  }, [location.pathname]);
+  }, [slug]);
 
   return (
     <ReactLenis root>
       {/* SEO Metadata */}
+
       <Helmet>
-        <title>
-          {project.title} - {project.tagline}
-        </title>
+        <title>{`${project.title} - ${project.tagline}`}</title>
         <meta name="description" content={project.summary} />
         <meta property="og:image" content={project.heroImage} />
-        <meta property="og:title" content={`${project.title} Website`} />
+        <meta property="og:title" content={`${project.title} | Portfolio`} />
         <meta property="og:description" content={project.summary} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={project.heroImage} />
       </Helmet>
+
       <DynamicCursor />
 
       <div className="project" id={project.id}>
@@ -152,7 +161,7 @@ const ProjectPage = () => {
 
           {/* Next Project CTA */}
           <div className="next-project-cta">
-            <Link to={`/projects/${nextProject.id}`}>
+            <Link to={`/projects/${nextProject.slug}`}>
               <div className="next-project-preview">
                 <h3>Next Project</h3>
                 <img
