@@ -1,10 +1,30 @@
 export const services = [
-  { id: 1, text: "UI/UX Design" },
-  { id: 2, text: "Frontend Development" },
-  { id: 3, text: "Performance Optimization" },
-  { id: 4, text: "Interactive Design" },
-  { id: 5, text: "SEO" },
-  { id: 6, text: "Digital Strategy" },
+  {
+    category: "Web Design & Development",
+    items: [
+      "UI/UX Design",
+      "Frontend Development",
+      "Interactive Design",
+      "Landing Page Design",
+      "eCommerce Development",
+    ],
+  },
+  {
+    category: "Performance & Optimization",
+    items: ["Performance Optimization", "Technical SEO", "On-page SEO"],
+  },
+  {
+    category: "Support & Maintenance",
+    items: ["Technical Support", "Maintenance", "Web Hosting"],
+  },
+  {
+    category: "Digital Strategy & Consulting",
+    items: [
+      "Digital Strategy",
+      "Custom Solution & Integration",
+      "Digital Consulting",
+    ],
+  },
 ];
 
 export const devtools = [

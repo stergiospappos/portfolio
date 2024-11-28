@@ -1,0 +1,172 @@
+/* Modal Animations */
+.modal-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.modal-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.modal-exit {
+  opacity: 1;
+}
+.modal-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Form Styling */
+.contact-form {
+  padding: 2rem;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border-radius: 10px;
+
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.contact-form h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--color-accent);
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-neutral-200);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="checkbox"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-neutral-400);
+  border-radius: 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--color-neutral-700);
+  color: var(--color-white);
+}
+
+.form-group input:focus {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.checkbox-label:hover {
+  color: var(--color-accent);
+}
+
+.checkbox-label input {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.error {
+  color: var(--color-error);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--color-neutral);
+  border: none;
+  border-radius: 8px;
+  color: var(--color-bg);
+  font-size: 1.2rem;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+  background-color: unset !important;
+  backdrop-filter: unset !important;
+}
+
+.modal-close:hover {
+  color: var(--color-accent);
+  transform: rotate(90deg);
+  background-color: unset !important;
+}
+
+/* Toast Message */
+.toast-message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-success);
+  color: var(--color-white);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fade-in 0.3s ease-out, fade-out 0.3s 3s ease-in forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.form-group input[type="checkbox"] {
+  width: fit-content;
+  margin-right: 1em;
+}
+
+.contact-form-text {
+  font-size: 1.5rem !important;
+}

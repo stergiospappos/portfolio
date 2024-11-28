@@ -1,9 +1,10 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ReactLenis, useLenis } from "lenis/react";
 
 import "./Information.css";
+import ContactForm from "../../components/ContactForm/ContactForm";
 import DynamicCursor from "../../components/DynamicCursor/DynamicCursor";
-
 import Transition from "../../components/preview/transition/Transition";
 
 import {
@@ -17,28 +18,38 @@ import {
 
 const Information = () => {
   const lenis = useLenis(({ scroll }) => {});
+  const [isFormOpen, setFormOpen] = useState(false); // Manage form modal state
 
   return (
     <ReactLenis root>
       <DynamicCursor />
       <div className="information">
         <div className="container">
-          <h1>
-            Specializing in client-facing interactions, I excel in crafting
-            solutions that prioritize functionality, and user experience, with a
-            proven track record in boosting sales and income for my clients.
-            With a keen eye for detail and a relentless pursuit of excellence, I
-            aim to deliver projects that exceed expectations.
-          </h1>
+          <p className="intro">
+            I'm Stergios—a web designer and developer with a passion for
+            transforming ideas into impactful digital experiences. Originally
+            from Greece, I've always been driven by data and the latest trends
+            to help brands seize their most significant opportunities and
+            trigger meaningful change. Focusing on excellence and collaboration,
+            I turn visions into innovative solutions that exceed expectations.
+          </p>
+
           <div className="info-services">
             <div className="col">
-              <div className="sub-col">
-                <ul>
-                  {services.map((item) => (
-                    <li key={item.id}>&#x2192; {item.text}</li>
-                  ))}
-                </ul>
+              <div className="services-container">
+                <h2></h2>
+                {services.map((category) => (
+                  <div key={category.category} className="service-category">
+                    <h3 className="category-name">{category.category}</h3>
+                    <ul>
+                      {category.items.map((item, index) => (
+                        <li key={index}>&#x2192; {item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
+
               {/* <div className="sub-col">
                 <ul>
                   {tools.map((item) => (
@@ -49,13 +60,30 @@ const Information = () => {
             </div>
             <div className="col">
               <p>
-                When I take on a project, it&apos;s a commitment to transform
-                more than just your website. It&apos;s about enhancing every
-                touchpoint of your digital ecosystem.
+                When I undertake a project, it's a commitment to transform not
+                just your website but to elevate every facet of your digital
+                presence. Guided by data-driven insights and a dedication to
+                excellence, I enhance each touchpoint of your digital ecosystem
+                to drive meaningful change.
               </p>
+              {/* Contact Link */}
               <div className="contact-link">
-                <Link to="/">&#x2192; Let&apos;s Connect</Link>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault(); // Prevent default navigation
+                    setFormOpen(true); // Open the modal
+                  }}
+                >
+                  &#x2192; Let&apos;s Connect
+                </a>
               </div>
+
+              {/* Contact Form Modal */}
+              <ContactForm
+                isOpen={isFormOpen}
+                onClose={() => setFormOpen(false)}
+              />
             </div>
           </div>
           <div className="info-content">
@@ -96,8 +124,7 @@ const Information = () => {
               </div>
             </div>
           </div>
-
-          <div className="info-content-2">
+          {/* <div className="info-content-2">
             <div className="col">
               <p data-cursor="Expanding horizons, one course at a time">
                 Courses
@@ -120,7 +147,7 @@ const Information = () => {
                 ))}
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </ReactLenis>

@@ -59,3 +59,42 @@
     gap: 4em;
   }
 }
+
+.intro {
+  font-size: clamp(1.5rem, 1.6827rem + 1.2103vw, 2.375rem);
+
+  margin: 0;
+  padding: 0;
+  line-height: 1.35em;
+  font-weight: 400;
+}
+
+.cta {
+  margin-top: 1em;
+}
+
+.category-name {
+  background-color: var(--color-accent);
+
+  color: #000;
+  border-radius: 0.25em;
+  padding: 0.3em 0.75em 0.4em;
+
+  margin-bottom: 0.2em;
+  margin-top: 1em;
+  max-width: fit-content;
+  font-size: clamp(0.75rem, 0.7356rem + 0.0641vw, 0.8125rem);
+  line-height: 1.35em;
+  letter-spacing: 0.1rem;
+
+  font-weight: 300;
+}
+
+.information li {
+  font-size: calc(16 * 1px + (20 - 16) * (100vw - 360px) / 1560);
+  line-height: 1.35em;
+}
+.info-services p {
+  font-size: calc(16 * 1px + (20 - 16) * (100vw - 360px) / 1560);
+  line-height: 1.35em;
+}
