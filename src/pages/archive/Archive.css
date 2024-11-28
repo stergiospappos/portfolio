@@ -2,6 +2,7 @@
   position: relative;
   width: 100%;
   height: 100%;
+  padding: 1.5em;
 }
 
 .overlay {
@@ -60,4 +61,8 @@ p#archive-category {
   .info-content-2 {
     display: none !important;
   }
+}
+
+.row img {
+  display: none;
 }
