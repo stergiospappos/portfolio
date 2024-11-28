@@ -1,4 +1,3 @@
-import React from "react";
 import "./MobileScreens.css"; // Add custom styles here
 
 const MobileScreens = ({ images }) => {
