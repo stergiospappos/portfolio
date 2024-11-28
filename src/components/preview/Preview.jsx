@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./Preview.css";
-import archiveData from "./archiveData";
+import archiveData from "../../data/archiveData";
 import tickSfx from "/assets/sfx/tick.wav";
 
 const defaultPreviewImg = archiveData[0].image;

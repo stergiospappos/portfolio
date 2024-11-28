@@ -62,7 +62,6 @@ p#archive-category {
     display: none !important;
   }
 }
-
-.row img {
+.archive .row img {
   display: none;
 }

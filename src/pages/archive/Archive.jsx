@@ -7,7 +7,7 @@ import Preview from "../../components/preview/Preview";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import archiveData from "../../components/preview/archiveData";
+import archiveData from "../../data/archiveData";
 
 gsap.registerPlugin(ScrollTrigger);
 
