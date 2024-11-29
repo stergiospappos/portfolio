@@ -61,8 +61,12 @@ const Home = () => {
             <p className="word">&</p>
             <p className="word">Developer</p>
           </div>
-
           <div className="line">
+            <p className="word">Always</p>
+            <p className="word">Curious</p>
+          </div>
+
+          <div className="line ctas">
             <EmailCopyHome />
 
             <Link

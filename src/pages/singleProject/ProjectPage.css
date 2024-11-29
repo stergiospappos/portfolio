@@ -211,7 +211,7 @@
   background-color: #e3cda6 !important;
 }
 #physis-massage .swiper-button-prev,
-.swiper-button-next {
+#physis-massage .swiper-button-next {
   background-color: #e3cda6 !important;
 }
 
@@ -221,7 +221,7 @@
 }
 
 #efrosini-goudi .swiper-button-prev,
-.swiper-button-next {
+#efrosini-goudi .swiper-button-next {
   background-color: #d7d0c1 !important;
 }
 
@@ -230,6 +230,34 @@
   background-color: #242424 !important;
 }
 #filoxeni-aitatoglou .swiper-button-prev,
-.swiper-button-next {
+#filoxeni-aitatoglou .swiper-button-next {
   background-color: #eae1d4 !important;
+}
+
+#rafaelias-brides > div > section:nth-child(5),
+#rafaelias-brides > div > section.section.mobiles-screens {
+  background-color: #eee9dd !important;
+}
+#rafaelias-brides .swiper-button-prev,
+#rafaelias-brides .swiper-button-next {
+  background-color: #eee9dd !important;
+}
+
+#baby-house > div > section:nth-child(5),
+#baby-house > div > section.section.mobiles-screens {
+  background-color: #f3f3f3 !important;
+}
+#baby-house .swiper-button-prev,
+#baby-house .swiper-button-next {
+  background-color: #ffb347 !important;
+}
+
+#desing-lux-vacays > div > section:nth-child(5),
+#desing-lux-vacays > div > section.section.mobiles-screens {
+  background-color: #005f9d !important;
+}
+#desing-lux-vacays .swiper-button-prev,
+#desing-lux-vacays .swiper-button-next {
+  background-color: #005f9d !important;
+  color: white !important;
 }

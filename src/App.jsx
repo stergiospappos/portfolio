@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     const currentTitle = pageTitles[location.pathname] || "Stergios Pappos";
     document.title = currentTitle;
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0 });
   }, [location.pathname]);
 
   // Check if the current route is a single project page

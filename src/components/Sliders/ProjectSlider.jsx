@@ -25,6 +25,7 @@ const ProjectSlider = ({ projectImages }) => {
             src={image}
             alt={`Slide ${index + 1}`}
             className="swiper-slide-bg-image"
+            loading="lazy"
           />
         </SwiperSlide>
       ))}

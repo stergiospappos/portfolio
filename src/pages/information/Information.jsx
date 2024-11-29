@@ -37,7 +37,6 @@ const Information = () => {
           <div className="info-services">
             <div className="col">
               <div className="services-container">
-                <h2></h2>
                 {services.map((category) => (
                   <div key={category.category} className="service-category">
                     <h3 className="category-name">{category.category}</h3>
@@ -59,6 +58,13 @@ const Information = () => {
               </div> */}
             </div>
             <div className="col">
+              <img
+                className="personal-image
+              "
+                src="./assets/information/Stergios_Pappos.avif"
+                alt="A photo of Stergios Pappos"
+                data-cursor="That's me!"
+              />
               <p>
                 When I undertake a project, it's a commitment to transform not
                 just your website but to elevate every facet of your digital
@@ -67,7 +73,7 @@ const Information = () => {
                 to drive meaningful change.
               </p>
               {/* Contact Link */}
-              <div className="contact-link">
+              <div className="contact-link" data-cursor="Click to open popup">
                 <a
                   href="#"
                   onClick={(e) => {

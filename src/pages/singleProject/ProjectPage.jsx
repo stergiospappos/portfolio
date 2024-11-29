@@ -51,11 +51,12 @@ const ProjectPage = () => {
         <meta property="og:description" content={project.summary} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={project.heroImage} />
+        
       </Helmet>
 
       <DynamicCursor />
 
-      <div className="project" id={project.id}>
+      <div className="project" id={project.slug}>
         <div className="container">
           <section className="project-hero-img">
             <img src={project.heroImage} alt={`${project.title} Hero`} />
@@ -167,6 +168,7 @@ const ProjectPage = () => {
                 <img
                   src={nextProject.hoverImage}
                   alt={`${nextProject.title} Hover`}
+                  loading="lazy"
                 />
                 <h3>{nextProject.title}</h3>
               </div>

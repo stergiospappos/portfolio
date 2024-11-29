@@ -98,3 +98,11 @@
   font-size: calc(16 * 1px + (20 - 16) * (100vw - 360px) / 1560);
   line-height: 1.35em;
 }
+
+.personal-image {
+  height: 350px;
+  width: 350px;
+  object-fit: cover;
+  margin-bottom: 2em;
+  border-radius: 0.3em;
+}

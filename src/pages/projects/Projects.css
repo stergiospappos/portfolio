@@ -109,3 +109,7 @@
 *::-webkit-scrollbar {
   display: none; /* Chrome, Safari, and Opera */
 }
+
+#root > div.projects > div {
+  padding-top: 0;
+}

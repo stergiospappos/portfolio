@@ -24,6 +24,13 @@
   text-transform: uppercase;
   transition: opacity 250ms ease;
 }
+.ctas {
+  margin-top: 2em;
+}
+
+.ctas .word {
+  font-size: clamp(1rem, 5vw, 3rem) !important;
+}
 
 a {
   text-decoration: none;
@@ -112,4 +119,8 @@ a {
   #text {
     width: 70%;
   }
+}
+
+.footer-link p {
+  display: none;
 }

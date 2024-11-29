@@ -5,7 +5,6 @@ import { ReactLenis } from "lenis/react";
 import "./Projects.css";
 import PixelatedImageCard from "../../components/PixelatedImageCard/PixelatedImageCard";
 import Transition from "../../components/preview/transition/Transition";
-import DynamicCursor from "../../components/DynamicCursor/DynamicCursor";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -80,7 +79,6 @@ const Projects = () => {
 
   return (
     <ReactLenis root>
-      <DynamicCursor />
       <div
         className="projects"
         ref={containerRef}

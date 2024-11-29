@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import "./PixelatedImageCard.css";
+import tickSfx from "/assets/sfx/tick.wav";
 
 const PixelatedImageCard = ({ defaultImg, activeImg }) => {
   const gridSize = 7;
@@ -11,6 +12,8 @@ const PixelatedImageCard = ({ defaultImg, activeImg }) => {
   const pixelGridRef = useRef(null);
   const activeCardRef = useRef(null);
   const delayedCall = useRef(null);
+
+  const tickSound = useRef(new Audio(tickSfx)); // Create a reference for the audio object
 
   const generatePixels = () => {
     const pixels = [];
@@ -41,8 +44,14 @@ const PixelatedImageCard = ({ defaultImg, activeImg }) => {
     const pixels = pixelGrid.querySelectorAll(".pixelated-image-card__pixel");
     const staggerDuration = animationStepDuration / pixels.length;
 
+    const playTickSound = () => {
+      tickSound.current.currentTime = 0; // Reset the audio to the start
+      tickSound.current.play(); // Play the tick sound
+    };
+
     const animatePixels = (activate) => {
       setIsActive(activate);
+      playTickSound(); // Play sound during hover
       gsap.killTweensOf(pixels);
       if (delayedCall.current) delayedCall.current.kill();
       gsap.set(pixels, { display: "none" });
