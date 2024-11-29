@@ -1,5 +1,6 @@
 {
-    id: "desing-lux-vacays", // Unique identifier for the project (used as a slug)
+    id: 6,
+    slug: "desing-lux-vacays", // Unique identifier for the project (used as a slug)
     title: "Design Luxury Vacays", // Displayed title of the project
     category: "Web Design & Development", // The type or field of the project
 
@@ -41,9 +42,12 @@
       },
     ],
     videoAssets: {
-      feature: "/assets/projects/design-lux-vacays/videos/designluxvacaysVideo1.mp4", // Primary video asset
-      secondary: "/assets/projects/design-lux-vacays/videos/designluxvacaysVideo2.mp4", // Additional video asset
-      shortClip: "/assets/projects/design-lux-vacays/videos/designluxvacaysVideo3.mp4", // Short-form video clip
+      feature:
+        "/assets/projects/design-lux-vacays/videos/designluxacaysVideo1.mp4", // Primary video asset
+      secondary:
+        "/assets/projects/design-lux-vacays/videos/designluxacaysVideo2.mp4", // Additional video asset
+      shortClip:
+        "/assets/projects/design-lux-vacays/videos/designluxacaysVideo3.mp4", // Short-form video clip
     },
 
     // Metadata

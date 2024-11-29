@@ -395,7 +395,7 @@ const projects = [
       "I proposed a comprehensive approach that went beyond web design, starting with a full brand audit to identify gaps and opportunities. Collaborating with a Brand Designer and Art Director, we developed a cohesive and luxurious brand identity that aligned with her target audience. The website was then designed to complement this new brand, with a minimal, user-friendly layout that showcased her services, local expertise, and client testimonials. The design and content worked together to create a seamless, professional digital experience.",
 
     // External Link
-    liveLink: "https://designluxvacaysstore.gr/", // Link to the live project
+    liveLink: "https://designluxvacays.com/", // Link to the live project
   },
 ];
 

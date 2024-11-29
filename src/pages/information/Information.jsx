@@ -14,7 +14,7 @@ import {
   industries,
   courses,
   bootcamps,
-} from "./info";
+} from "../../data/info";
 
 const Information = () => {
   const lenis = useLenis(({ scroll }) => {});

@@ -51,7 +51,6 @@ const ProjectPage = () => {
         <meta property="og:description" content={project.summary} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={project.heroImage} />
-        
       </Helmet>
 
       <DynamicCursor />
