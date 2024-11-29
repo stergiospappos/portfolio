@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Modal from "./Modal";
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
 import "./ContactForm.css";
 
 const ContactForm = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    phone: "",
+    phone: "", // Will store phone as a string
     services: [],
     gdprConsent: false,
   });
   const [errors, setErrors] = useState({});
-  const [toastMessage, setToastMessage] = useState("");
+  const [toast, setToast] = useState({ message: "", type: "" });
 
   useEffect(() => {
     const handleEsc = (e) => {
@@ -41,12 +43,21 @@ const ContactForm = ({ isOpen, onClose }) => {
     }));
   };
 
+  const handlePhoneChange = (value) => {
+    setFormData((prev) => ({
+      ...prev,
+      phone: value,
+    }));
+  };
+
   const validateForm = () => {
     const newErrors = {};
     if (!formData.fullName.trim())
       newErrors.fullName = "Full Name is required.";
     if (!formData.email.trim()) newErrors.email = "Email is required.";
-    if (!formData.phone.trim()) newErrors.phone = "Phone number is required.";
+    if (!formData.phone) {
+      newErrors.phone = "Phone number is required.";
+    }
     if (formData.services.length === 0)
       newErrors.services = "At least one service must be selected.";
     if (!formData.gdprConsent)
@@ -57,16 +68,27 @@ const ContactForm = ({ isOpen, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!validateForm()) return;
+    if (!validateForm()) {
+      setToast({
+        message: "Please fix the errors in the form.",
+        type: "error",
+      });
+      return;
+    }
 
-    setToastMessage("Form Submitted Successfully!");
-    setTimeout(() => setToastMessage(""), 3000);
-    onClose(); // Close modal
+    setToast({ message: "Form Submitted Successfully!", type: "success" });
+
+    setTimeout(() => {
+      setToast({ message: "", type: "" });
+      onClose();
+    }, 3000);
   };
 
   return (
     <>
-      {toastMessage && <div className="toast-message">{toastMessage}</div>}
+      {toast.message && (
+        <div className={`toast-message ${toast.type}`}>{toast.message}</div>
+      )}
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <div className="contact-form">
@@ -79,8 +101,14 @@ const ContactForm = ({ isOpen, onClose }) => {
             name="contact"
             method="POST"
             data-netlify="true"
+            data-netlify-honeypot="bot-field"
           >
             <input type="hidden" name="form-name" value="contact" />
+            <div style={{ display: "none" }}>
+              <label>
+                Don’t fill this out: <input name="bot-field" />
+              </label>
+            </div>
 
             {/* Full Name */}
             <div className="form-group">
@@ -91,6 +119,7 @@ const ContactForm = ({ isOpen, onClose }) => {
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleInputChange}
+                autoComplete="name"
                 required
               />
               {errors.fullName && (
@@ -107,6 +136,7 @@ const ContactForm = ({ isOpen, onClose }) => {
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
+                autoComplete="email"
                 required
               />
               {errors.email && <span className="error">{errors.email}</span>}
@@ -115,12 +145,12 @@ const ContactForm = ({ isOpen, onClose }) => {
             {/* Phone */}
             <div className="form-group">
               <label htmlFor="phone">Phone</label>
-              <input
-                type="text"
+              <PhoneInput
                 id="phone"
                 name="phone"
                 value={formData.phone}
-                onChange={handleInputChange}
+                onChange={handlePhoneChange}
+                defaultCountry="AE"
                 required
               />
               {errors.phone && <span className="error">{errors.phone}</span>}
@@ -137,12 +167,13 @@ const ContactForm = ({ isOpen, onClose }) => {
                 "Digital Consulting",
                 "Digital Strategy",
               ].map((service) => (
-                <label key={service} className="checkbox-label">
+                <label key={service} className="fancy-checkbox">
                   <input
                     type="checkbox"
                     value={service}
                     onChange={handleCheckboxChange}
                   />
+                  <span className="checkmark"></span>
                   {service}
                 </label>
               ))}

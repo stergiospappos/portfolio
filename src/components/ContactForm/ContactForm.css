@@ -47,6 +47,7 @@
 }
 
 .form-group input[type="text"],
+.form-group input[type="tel"],
 .form-group input[type="email"],
 .form-group input[type="checkbox"] {
   width: 100%;
@@ -134,39 +135,100 @@
 .toast-message {
   position: fixed;
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--color-success);
-  color: var(--color-white);
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: fade-in 0.3s ease-out, fade-out 0.3s 3s ease-in forwards;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: var(--color-bg);
+  z-index: 1000;
+  font-size: 16px;
+  animation: fadeInOut 4s ease-in-out;
+  z-index: 10000;
 }
 
-@keyframes fade-in {
-  from {
+.toast-message.success {
+  background-color: var(--color-accent); /* Green */
+}
+
+.toast-message.error {
+  background-color: var(--color-primary); /* Red */
+}
+
+@keyframes fadeInOut {
+  0% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(20px);
   }
-  to {
+  10% {
     opacity: 1;
     transform: translateY(0);
   }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 
-@keyframes fade-out {
-  to {
-    opacity: 0;
-    transform: translateY(10px);
-  }
+.contact-form-text {
+  font-size: 1.5rem !important;
+}
+.PhoneInputCountryIconImg,
+.PhoneInputCountryIcon,
+.PhoneInputCountryIcon--border {
+  border-radius: 0.1em;
+}
+.fancy-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.fancy-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.fancy-checkbox .checkmark {
+  width: 20px;
+  height: 20px;
+  background-color: #f4f4f4;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fancy-checkbox:hover .checkmark {
+  border-color: var(--color-accent);
+}
+
+.fancy-checkbox input:checked ~ .checkmark {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.fancy-checkbox input:checked ~ .checkmark::after {
+  content: "X";
+  color: var(--color-bg);
+  font-size: 14px;
+}
+
+.fancy-checkbox:hover {
+  color: var(--color-accent);
 }
 
 .form-group input[type="checkbox"] {
   width: fit-content;
   margin-right: 1em;
-}
-
-.contact-form-text {
-  font-size: 1.5rem !important;
 }
