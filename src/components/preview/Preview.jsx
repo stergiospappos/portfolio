@@ -1,13 +1,11 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import "./Preview.css";
 import archiveData from "../../data/archiveData";
 import tickSfx from "/assets/sfx/tick.wav";
 
-const defaultPreviewImg = archiveData[0].image;
 const buffer = 100;
 
 const Preview = () => {
-  const [previewImg, setPreviewImg] = useState(defaultPreviewImg);
   const lastIndexRef = useRef(0);
   const audioContextRef = useRef(null);
   const audioBufferRef = useRef(null);
@@ -16,6 +14,7 @@ const Preview = () => {
   useEffect(() => {
     const preloadAssets = async () => {
       try {
+        // Preload audio
         const context = new (window.AudioContext ||
           window.webkitAudioContext)();
         audioContextRef.current = context;
@@ -24,13 +23,8 @@ const Preview = () => {
         const arrayBuffer = await response.arrayBuffer();
         const audioBuffer = await context.decodeAudioData(arrayBuffer);
         audioBufferRef.current = audioBuffer;
-
-        archiveData.forEach(({ image }) => {
-          const img = new Image();
-          img.src = image;
-        });
       } catch (error) {
-        console.error("Failed to initialize audio or preload images:", error);
+        console.error("Error preloading audio:", error);
       }
     };
 
@@ -44,8 +38,13 @@ const Preview = () => {
 
       if (index !== lastIndexRef.current) {
         lastIndexRef.current = index;
-        setPreviewImg(archiveData[index].image);
 
+        // Hide all images and show the current one
+        document
+          .querySelectorAll(".preview-img")
+          .forEach((img, i) => (img.style.opacity = i === index ? "1" : "0"));
+
+        // Play sound
         const context = audioContextRef.current;
         const audioBuffer = audioBufferRef.current;
 
@@ -72,11 +71,23 @@ const Preview = () => {
 
   return (
     <div className="archive-preview">
-      <img
-        src={previewImg}
-        alt="Preview of the current project"
-        className="preview-img"
-      />
+      {archiveData.map(({ image }, index) => (
+        <img
+          key={index}
+          src={image}
+          alt={`Preview ${index}`}
+          className="preview-img"
+          style={{
+            opacity: index === 0 ? "1" : "0", // Show only the first image initially
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            transition: "opacity 0.1s ", // Smooth transition between images
+          }}
+        />
+      ))}
     </div>
   );
 };

@@ -79,12 +79,6 @@ const Archive = () => {
         {archiveList.map((archive) => (
           <div className="row" key={archive.id}>
             <div className="archive-item">
-              <img
-                src={archive.image}
-                alt={`${archive.name} preview`}
-                className="archive-img"
-                loading="lazy"
-              />
               <div className="archive-details">
                 <h1 id="archive-name">{archive.name}</h1>
                 <p id="archive-category">{archive.category}</p>
