@@ -76,7 +76,6 @@ const Preview = () => {
         src={previewImg}
         alt="Preview of the current project"
         className="preview-img"
-        loading="lazy"
       />
     </div>
   );
