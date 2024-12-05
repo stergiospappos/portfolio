@@ -36,6 +36,16 @@
   background-color: var(--color-accent);
 }
 
+/* For modern browsers */
+body {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For IE and Edge */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
 @font-face {
   font-family: "PPNeueMontreal";
   font-weight: 300;
